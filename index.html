@@ -15,60 +15,69 @@
     <ul class="navbar-nav">
       <li class="nav-item active">
         <a class="nav-link" href="https://bpwyatt04.wixsite.com/bcomp" target="_blank">More Music</a>
-        <!-- <img src="/images/408-4088741_free-png-musical-notes-png-png-image-with.png.jpeg"> -->
       </li>
     </ul>
   </nav>
 </head>
 
 <body>
-  <div class="d-flex justify-content-center" id="main" style="width: auto; margin-top: 20px;">
-    <div class="text-center" id="progressions">
-      <h3 class="">Chord Progression Generator</h3>
-      <div class="">
-        <select class="custom-select" id="mode">
-          <option selected>Choose a mode</option>
-          <option value="1">Major</option>
-          <option value="2">Minor</option>
-        </select>
-        <select class="custom-select" id="num-chords" style="margin-top: 20px;">
-          <option selected>How many chords?</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
-          <option value="7">7</option>
-          <option value="8">8</option>
-          <option value="9">9</option>
-          <option value="10">10</option>
-          <option value="50">50</option>
-        </select>
-        <select class="custom-select" id="cadence" style="margin-top: 20px;">
-          <option selected>Cadence type?</option>
-          <option value="1">Authentic Cadence</option>
-          <option value="2">Half Cadence</option>
-          <option value="3">Plagal Cadence</option>
-        </select>
-        <button class="btn btn-primary" style="margin-top: 20px;" id="generate"
-          title="Generate a chord progression">Generate</button>
-        <button class="btn btn-primary" style="margin-top: 20px;" id="lookup"
-          title="Lookup songs that contain your progression">Lookup</button>
-        <div class="" id="display">
-          <table class="table" style="margin-top: 20px;">
-            <thead>
-              <tr>
-                <th>Your progressions</th>
-              </tr>
-            </thead>
-            <tbody id="tbody" style="font-size: xx-large;">
+  <div class="d-flex flex-row justify-content-center">
+    <div class="card" id="yay" style="width: 350px; margin-top: 20px; margin-right: auto; height: 300px;">
+      <div class="card-body" style="overflow: auto;">
+        <h4 class="card-title">Search results</h4>
+        <div id="song-info">
 
-            </tbody>
-          </table>
         </div>
       </div>
     </div>
-    <button class="btn btn-primary float-right align-self-center"
-      style="margin-top: 20px; margin-left: 20px; max-height: 3rem; text-align: center;" id="clear"
-      title="Clear progression list">Clear</button>
+    <div class="d-flex justify-content-center" id="main" style="width: auto; margin-top: 20px; margin-right: auto;">
+      <div class="text-center" id="progressions">
+        <h3 class="">Chord Progression Generator</h3>
+        <div class="">
+          <select class="custom-select" id="mode">
+            <option selected>Choose a mode</option>
+            <option value="1">Major</option>
+            <option value="2">Minor</option>
+          </select>
+          <select class="custom-select" id="num-chords" style="margin-top: 20px;">
+            <option selected>How many chords?</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="50">50</option>
+          </select>
+          <select class="custom-select" id="cadence" style="margin-top: 20px;">
+            <option selected>Cadence type?</option>
+            <option value="1">Authentic Cadence</option>
+            <option value="2">Half Cadence</option>
+            <option value="3">Plagal Cadence</option>
+          </select>
+          <button class="btn btn-primary" style="margin-top: 20px;" id="generate"
+            title="Generate a chord progression">Generate</button>
+          <button class="btn btn-primary" style="margin-top: 20px;" id="lookup"
+            title="Lookup songs that contain your progression">Lookup</button>
+          <div class="" id="display">
+            <table class="table" style="margin-top: 20px;">
+              <thead>
+                <tr>
+                  <th>Your progressions</th>
+                </tr>
+              </thead>
+              <tbody id="tbody" style="font-size: xx-large;">
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <button class="btn btn-primary float-right align-self-center"
+        style="margin-top: 20px; margin-left: 20px; max-height: 3rem; text-align: center;" id="clear"
+        title="Clear progression list">Clear</button>
+    </div>
   </div>
 
   <!-- Optional JavaScript -->

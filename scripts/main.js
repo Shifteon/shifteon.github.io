@@ -1,6 +1,6 @@
 const majorNumerals = ['I', 'ii', 'iii', 'IV', 'V', 'vi', 'viio'];
 
-const minorNumerals = ['i', 'iio', 'III', 'iv', 'V', 'VI', 'viio'];
+const minorNumerals = ['i', 'iio', 'III', 'iv', 'V', 'VI', 'viio', 'VII'];
 
 var progression = [];
 
@@ -198,17 +198,35 @@ function resetDisplay() {
     document.querySelector('#tbody').innerHTML = '';
 }
 
+function resetSongs() {
+    document.querySelector('#song-info').textContent = '';
+}
+
 function displaySongs(songData) {
-    let div = document.createElement('div');
-    let text = document.createElement('p');
+    let header = document.createElement('h5');
+    header.textContent = progression;
+    document.querySelector('#song-info').appendChild(header);
+    
+    let content = songData.map(string => {
+        let song = document.createElement('p');
+        let artist = document.createElement('p');
+        let url = document.createElement('a');
+        let br = document.createElement('br');
 
-    let content = songData.map(string => ' ' + string.song);
-    text.textContent = content;
+        song.textContent = 'Song: ' + string.song;
+        artist.textContent = 'Artist: ' + string.artist;
+        url.textContent = 'Url: ' + string.url;
 
-    div.setAttribute('style', 'height: 7rem; overflow: auto; width: 50rem;');
-    div.setAttribute('id', 'song-info');
-    div.appendChild(text);
-    document.querySelector('#tbody').append(div);
+        url.setAttribute('href', string.url);
+        url.setAttribute('target', '_blank');
+
+        br.setAttribute('style', 'line-height: 2;')
+
+        document.querySelector('#song-info').appendChild(song);
+        document.querySelector('#song-info').appendChild(artist);
+        document.querySelector('#song-info').appendChild(url);
+        url.append(br);
+    });
 }
 
 function hookTheory() {
@@ -237,7 +255,6 @@ function hookTheory() {
     })
 
     let url = "https://api.hooktheory.com/v1/trends/songs?cp=" + chords;
-    // let url = "https://api.hooktheory.com/v1/users/auth";
 
     let songData;
     let headers = new Headers();
@@ -245,7 +262,6 @@ function hookTheory() {
 
     let request = new Request(url, {
         method: 'GET',
-        // body: JSON.stringify(login),
         headers: headers
     })
 
@@ -263,9 +279,12 @@ function hookTheory() {
 
 }
 
-// hookTheory();
+
 document.querySelector('#generate').addEventListener('click', generate);
 
-document.querySelector('#lookup').addEventListener('click', hookTheory);
+document.querySelector('#lookup').addEventListener('click', () => {
+    resetSongs();
+    hookTheory();
+} );
 
 document.querySelector('#clear').addEventListener('click', resetDisplay);
