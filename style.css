@@ -1,0 +1,9 @@
+.button {
+    margin-top: 20px;
+}
+
+.result {
+    overflow: auto;
+    width: fit-content;
+    height: 300px;
+}
