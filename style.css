@@ -27,7 +27,7 @@ h6 {
 nav {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    height: fit-content;
+    height: auto;
     background-color: #3D5A80;
 }
 
