@@ -63,6 +63,14 @@ nav {
     color: #98C1D9;
 }
 
+.fixed-top {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+}
+
 /* Footer styles */
 footer {
     background-color: #3D5A80;
