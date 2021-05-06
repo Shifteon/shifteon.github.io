@@ -1,0 +1,25 @@
+@media only screen and (min-width: 768px) {
+    nav {
+        max-width: 100%;
+    }
+
+    #navigation {
+        grid-template-columns: repeat(4, auto);
+    }
+
+    #navigation li {
+        display: block;
+    }
+
+    #navigation a {
+        text-align: center;
+    }
+
+    #navigation li:first-child {
+        display: none;
+    }
+
+    main {
+        max-width: 80%;
+    }
+}

@@ -1,0 +1,112 @@
+/* https://coolors.co/d64045-467599-e9fff9-1d3354 */
+
+/* General Styles */
+html {
+    height: fit-content;
+}
+
+nav {
+    margin: 0 auto;
+    background-color: #D64045;
+    max-width: 425px;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+#navigation {
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: auto;
+    list-style: none;
+}
+
+#navigation li:first-child {
+    display: block;
+}
+
+#navigation li {
+    display: none;
+}
+
+#navigation a {
+    display: block;
+    padding: 0.75rem;
+    text-align: left;
+    text-decoration: none;
+    color: white;
+    font-weight: 700;
+}
+
+#navigation a:hover,
+#navigation a.active:hover {
+    color: white;
+    background-color: #467599;
+}
+
+#navigation a.active {
+    background-color: rgba(0, 0, 0, .55);
+    color: white;
+    /* border-bottom: 5px solid black; */
+}
+
+#navigation.responsive li {
+    display: block;
+}
+
+body {
+    font-family: 'Merriweather', serif;
+    height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+main {
+    max-width: 425px;
+    margin: 0 auto;
+}
+
+main h1 {
+    text-align: center;
+}
+
+footer {
+    width: 100%;
+    margin: 0 auto;
+    background-color: #D64045;
+    color: white;
+    height: 40px;
+    font-family: 'Source Sans Pro', sans-serif;
+    position: absolute;
+    bottom: 0;
+}
+
+footer p {
+    margin: 0;
+    padding-top: 10px;
+    padding-left: 15px;
+}
+
+/* Color Scheme Styles */
+.color-scheme {
+    max-width: 425px;
+}
+
+/* Typography styles */
+#typography-p {
+    text-align: center;
+}
+
+.typography-grid {
+    width: 80%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+}
