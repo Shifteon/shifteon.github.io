@@ -18,6 +18,7 @@ nav {
     display: grid;
     grid-template-columns: auto;
     list-style: none;
+    font-size: 1.3em;
 }
 
 #navigation li:first-child {
@@ -56,6 +57,7 @@ nav {
 body {
     font-family: 'Merriweather', serif;
     height: 100%;
+    background-color: #FDFFFC;
 }
 
 h1,
@@ -65,6 +67,7 @@ h4,
 h5,
 h6 {
     font-family: 'Source Sans Pro', sans-serif;
+    color: #1D3354;
 }
 
 main {
@@ -83,8 +86,8 @@ footer {
     color: white;
     height: 40px;
     font-family: 'Source Sans Pro', sans-serif;
-    position: absolute;
-    bottom: 0;
+    /* position: absolute; */
+    /* bottom: 0; */
 }
 
 footer p {
@@ -93,9 +96,34 @@ footer p {
     padding-left: 15px;
 }
 
+button {
+    background-color: #1D3354;
+    color: white;
+    border-radius: 20px;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+}
+
+.underline {
+    border-bottom: #467599 solid 3px;
+}
+
 /* Color Scheme Styles */
-.color-scheme {
+.color-img {
     max-width: 425px;
+}
+
+.color-examples h1 {
+    text-align: left;
+}
+
+.color-examples p {
+    background-color: #467599;
+    color: white;
+    padding: 15px;
+    max-width: 400px;
+    max-height: fit-content;
 }
 
 /* Typography styles */

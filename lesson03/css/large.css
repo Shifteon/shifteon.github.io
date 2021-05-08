@@ -4,6 +4,10 @@
         margin: 0 auto;
     }
 
+    main {
+        width: 50%;
+    }
+
     /* Color Scheme Styles */
     .color-scheme {
         max-width: 100%;
