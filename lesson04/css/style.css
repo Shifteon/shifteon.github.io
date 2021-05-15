@@ -183,6 +183,9 @@ main section {
 
 .forecast.show {
     display: block;
+    background-color: #467599;
+    color: white;
+    box-shadow: 10px 5px 5px lightgray;
 }
 
 .forecast div {
@@ -206,8 +209,9 @@ main section {
     background-color: #467599;
     color: white;
     margin: 0;
-    padding: 15px;
+    padding: 60px 0 20px 0;
     text-align: center;
+    height: 100px;
 }
 
 article p {
