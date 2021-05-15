@@ -70,4 +70,8 @@
         background-color: #E9FFF9;
         padding: 0 15px 15px 15px;
     }
+
+    .banner p {
+        padding: 0;
+    }
 }

@@ -173,6 +173,15 @@ main section {
     width: inherit;
 }
 
+.banner h2 {
+    margin-bottom: 0;
+}
+
+.banner p {
+    padding-left: 15px;
+    margin-top: 5px;
+}
+
 .social {
     display: none;
 }
@@ -214,14 +223,19 @@ main section {
     height: 100px;
 }
 
+article h2 {
+    margin-bottom: 0;
+}
+
 article p {
     display: grid;
     grid-template-columns: auto;
-    width: 90%;
-    margin: 0 auto;
+    /* width: 90%; */
+    padding: 0 15px 0 15px;
+    margin: 5px auto 0 auto;
 }
 
 article p img {
     grid-row: 2/3;
-    width: inherit;
+    width: 90%;
 }
