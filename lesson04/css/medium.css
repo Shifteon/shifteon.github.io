@@ -77,6 +77,10 @@
         padding-left: 15px;
     }
 
+    #preston-header {
+        margin: 15px;
+    }
+
     .forecast {
         display: grid;
         grid-template-columns: repeat(5, auto);
