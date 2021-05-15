@@ -85,6 +85,7 @@
 
     #forecast-header {
         height: auto;
+        padding: 15px;
     }
 
     article p img {
