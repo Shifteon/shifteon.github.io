@@ -83,6 +83,10 @@
         text-align: center;
     }
 
+    #forecast-header {
+        height: auto;
+    }
+
     article p img {
         float: right;
         width: 300px;

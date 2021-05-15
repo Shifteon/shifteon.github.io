@@ -19,6 +19,7 @@ nav {
     display: inline-block;
     grid-row: 1;
     grid-column: 1/2;
+    padding-bottom: 5px;
 }
 
 .logo-box img{
