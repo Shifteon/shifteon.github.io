@@ -72,6 +72,11 @@
         font-size: 1em;
     }
 
+    .footer-bottom {
+        text-align: left;
+        padding-left: 15px;
+    }
+
     .forecast {
         display: grid;
         grid-template-columns: repeat(5, auto);

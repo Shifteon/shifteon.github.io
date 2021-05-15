@@ -1,7 +1,6 @@
 function showForecast() {
     const forecast = document.querySelector('.forecast');
     const forecastHeader = document.querySelector('#forecast-header')
-    const hidden = window.getComputedStyle(forecast);
 
     forecastHeader.addEventListener('click', () => {
         // Only toggle the class if we are on the small view size
@@ -12,6 +11,7 @@ function showForecast() {
 }
 
 window.addEventListener('load', () => {
+    // Create responsive nav
     const hambutton = document.querySelector('.ham');
     const mainnav = document.querySelector('#navigation');
 
@@ -23,6 +23,14 @@ window.addEventListener('load', () => {
     window.onresize = () => {
         if (window.innerWidth > 760) mainnav.classList.remove('responsive')
     };
+
+    // Set the date on the footer
+    const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    const date = new Date();
+    const day = days[date.getDay()];
+    const month = months[date.getMonth()];
+    document.querySelector('.footer-bottom').innerHTML = day + ", " + date.getDate() + " " + month + " " + date.getFullYear();
 
     showForecast();
 });

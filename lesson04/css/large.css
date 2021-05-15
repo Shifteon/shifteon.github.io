@@ -41,7 +41,13 @@
     .social {
         display: block;
         grid-column: 2/3;   
-        align-self: start;
+        margin-top: 10px;
+    }
+
+    .social img {
+        width: 32px;
+        padding: 5px;
+        margin-left: 15px;
     }
 
     footer ul {
@@ -56,6 +62,7 @@
         background-color: #1D3354;
         height: 30px;
         display: block;
+        padding: 15px 15px 0px 150px;
     }
 
     .banner {
