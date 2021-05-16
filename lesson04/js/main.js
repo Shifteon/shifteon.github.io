@@ -1,12 +1,17 @@
 function showForecast() {
     const forecast = document.querySelector('.forecast');
-    const forecastHeader = document.querySelector('#forecast-header')
+    const forecastHeader = document.querySelector('#forecast-header');
+    const arrow = document.querySelector('#forecast-header p');
 
     forecastHeader.addEventListener('click', () => {
         // Only toggle the class if we are on the small view size
         if (window.matchMedia("(min-width: 768px)").matches || window.matchMedia("(min-width: 1024px)").matches)
             return;
         forecast.classList.toggle('show');
+        if (forecast.classList.contains('show'))
+            arrow.innerHTML = "&#9651;";
+        else
+            arrow.innerHTML = "&#9661;";
     });
 }
 
