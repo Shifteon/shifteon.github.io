@@ -97,6 +97,10 @@
         padding: 15px;
     }
 
+    #forecast-header p {
+        display: none;
+    }
+
     article p img {
         float: right;
         width: 300px;
