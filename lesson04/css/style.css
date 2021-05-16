@@ -234,7 +234,6 @@ article h2 {
 article p {
     display: grid;
     grid-template-columns: auto;
-    /* width: 90%; */
     padding: 0 15px 0 15px;
     margin: 5px auto 0 auto;
 }
