@@ -145,7 +145,7 @@ footer h3 {
     margin-top: 0;
 }
 
-footer ul li:first-child {
+.contact p:first-of-type {
     display: none;
 }
 
@@ -153,6 +153,10 @@ footer ul li:first-child {
     width: 90%;
     margin: 0 auto;
     display: block;
+}
+
+.contact p {
+    padding-left: 1em;
 }
 
 .footer-bottom {
