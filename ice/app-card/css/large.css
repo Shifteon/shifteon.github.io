@@ -16,7 +16,7 @@ body {
     grid-row: 1/-1;
     height: 1000px;
     /* z-index: 1; */
-    background: linear-gradient(0deg, rgba(5, 113, 188, 1) 15%, rgba(48, 136, 176, .5) 50%, rgba(255, 255, 255, 0) 77%), url(images/app-card.jpg);
+    background: linear-gradient(0deg, rgba(5, 113, 188, 1) 15%, rgba(48, 136, 176, .5) 50%, rgba(255, 255, 255, 0) 77%), url(/images/app-card.jpg);
 }
 
 /* .main-img {
