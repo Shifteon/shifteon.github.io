@@ -25,6 +25,17 @@ function showPancakes(day) {
     return;
 }
 
+function fontLoader() {
+    WebFont.load({
+        google: {
+          families: [
+             "Roboto",
+             "Lato"
+          ]
+        }
+      });
+}
+
 window.addEventListener('load', () => {
     // Create responsive nav
     const hambutton = document.querySelector('.ham');
@@ -49,4 +60,5 @@ window.addEventListener('load', () => {
     
     showPancakes(day);
     showForecast();
+    fontLoader();
 });
