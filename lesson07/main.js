@@ -7,7 +7,9 @@ function loadImages(img) {
 let images = document.querySelectorAll("img[data-src]");
 const imgObserver = new IntersectionObserver((entries, imgObserver) => {
     entries.forEach(entry => {
-        if (entry.isIntersecting) {
+        if (!entry.isIntersecting) {
+            return;
+        } else {
             loadImages(entry.target);
             imgObserver.unobserve(entry.target);
         }
