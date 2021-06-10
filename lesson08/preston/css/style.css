@@ -312,6 +312,47 @@ article p img {
     padding: .3em;
 }
 
+/* Storm center */
+#storm-main form {
+    width: 80%;
+    margin: 1em auto;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+input, select {
+    margin-bottom: 1em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: .7em;
+}
+
+label {
+    color: black;
+}
+
+.submit-btn {
+    width: 75px;
+    justify-self: end;
+    margin-top: 1em;
+    background-color: #467599;
+    color: white;
+    font-size: 1em;
+}
+
+.radio {
+    display: inline-block;
+    padding: .5em;
+}
+
+/* #storm-main form label {
+    display: none;
+}
+
+#storm-main #radio-label {
+    display: inline;
+} */
+
 /*----- Clearfix: Force an Element not to collapse -----*/
 .clearfix:after {
     content: "";
