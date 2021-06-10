@@ -57,3 +57,7 @@ tfoot tr {
     background-color: #628ca6;
     color: white;
 }
+
+tr:nth-of-type(6) td:first-child {
+    font-style: italic;
+}
