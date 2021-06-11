@@ -149,4 +149,12 @@
         align-self: center;
         /* margin: 0 auto 1em; */
     }
+
+    /* Storm center */
+    #thanks-main p {
+        /* width: 400px; */
+        margin: 0 auto;
+        padding-bottom: 1em;
+        text-align: left;
+    }
 }
