@@ -22,7 +22,7 @@ function newPerson() {
             const numChildren = document.querySelector('#num-children');
             const ip = document.querySelector('#ip');
 
-            personName.innerHTML = p["person"]["personal"]["name"] + ", " + p["person"]["personal"]["age"];
+            personName.innerHTML = p["person"]["personal"]["name"] + " " + p["person"]["personal"]["last_name"] + ", " + p["person"]["personal"]["age"];
             password.innerHTML = "Password: " + p["person"]["online_info"]["password"];
             email.innerHTML = "Email: " + p["person"]["online_info"]["email"];
             eyeColor.innerHTML = "Eye Color: " + p["person"]["personal"]["eye_color"];
