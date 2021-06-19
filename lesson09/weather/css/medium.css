@@ -53,6 +53,7 @@
         color: white;
         font-size: 1.2em;
         padding-bottom: 5px;
+        display: block;
     }
 
     #navigation {
@@ -156,5 +157,26 @@
         margin: 0 auto;
         padding-bottom: 1em;
         text-align: left;
+    }
+
+    /* Home */
+    #towns section {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: 600px;
+    }
+
+    #towns section img {
+        padding: 1em;
+    }
+
+    #towns section:nth-of-type(2) img {
+        grid-column: 1/2;
+        grid-row: 1/2;
+    }
+
+    #towns section:nth-of-type(2) .town-info {
+        grid-column: 2/3;
+        grid-row: 1/2;
     }
 }

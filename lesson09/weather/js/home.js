@@ -14,10 +14,25 @@ function townData() {
         .then(function(town) {
             console.log(town);
 
-            const preston = document.querySelector('#preston');
-            const fishHaven = document.querySelector('#fish-haven');
-            const sodaSprings = document.querySelector('#soda-springs');
+            // Find the index for the towns
+            for (item in town["towns"]) {
+                if (town["towns"][item].name == "Preston")
+                    var prs = item;
+                else if (town["towns"][item].name == "Fish Haven")
+                    var fh = item;
+                else if (town["towns"][item].name == "Soda Springs")
+                    var sd = item;
+            }
 
+            // Select the places we want to add info
+            const prestonImgBox = document.querySelector('#preston');
+            const fishHavenImgBox = document.querySelector('#fish-haven');
+            const sodaSpringsImgBox = document.querySelector('#soda-springs');
+            const preston = document.querySelector('#preston .town-info');
+            const fishHaven = document.querySelector('#fish-haven .town-info');
+            const sodaSprings = document.querySelector('#soda-springs .town-info');
+
+            // Create the elements
             let prestonMotto = document.createElement('h3');
             let fishHavenMotto = document.createElement('h3');
             let sodaSpringsMotto = document.createElement('h3');
@@ -38,29 +53,35 @@ function townData() {
             let fishHavenImg = document.createElement('img');
             let sodaSpringsImg = document.createElement('img');
 
-            prestonMotto.textContent = town["towns"][6].motto;
-            fishHavenMotto.textContent = town["towns"][2].motto;
-            sodaSpringsMotto.textContent = town["towns"][0].motto;
+            // Set the elements content
+            prestonMotto.textContent = town["towns"][prs].motto;
+            fishHavenMotto.textContent = town["towns"][fh].motto;
+            sodaSpringsMotto.textContent = town["towns"][sd].motto;
             prestonMotto.classList.add('motto');
             fishHavenMotto.classList.add('motto');
             sodaSpringsMotto.classList.add('motto');
 
-            prestonYearFounded.textContent = "Year Founded: " + town["towns"][6].yearFounded;
-            fishHavenYearFounded.textContent = "Year Founded: " + town["towns"][2].yearFounded;
-            sodaSpringsYearFounded.textContent = "Year Founded: " + town["towns"][0].yearFounded;
+            prestonYearFounded.textContent = "Year Founded: " + town["towns"][prs].yearFounded;
+            fishHavenYearFounded.textContent = "Year Founded: " + town["towns"][fh].yearFounded;
+            sodaSpringsYearFounded.textContent = "Year Founded: " + town["towns"][sd].yearFounded;
 
-            prestonPopulation.textContent = "Population: " + town["towns"][6].currentPopulation;
-            fishHavenPopulation.textContent = "Population: " + town["towns"][2].currentPopulation;
-            sodaSpringsPopulation.textContent = "Population: " + town["towns"][0].currentPopulation;
+            prestonPopulation.textContent = "Population: " + town["towns"][prs].currentPopulation;
+            fishHavenPopulation.textContent = "Population: " + town["towns"][fh].currentPopulation;
+            sodaSpringsPopulation.textContent = "Population: " + town["towns"][sd].currentPopulation;
 
-            prestonRain.textContent = "Annual Rain Fall: " + town["towns"][6].averageRainfall;
-            fishHavenRain.textContent = "Annual Rain Fall: " + town["towns"][2].averageRainfall;
-            sodaSpringsRain.textContent = "Annual Rain Fall: " + town["towns"][0].averageRainfall;
+            prestonRain.textContent = "Annual Rain Fall: " + town["towns"][prs].averageRainfall;
+            fishHavenRain.textContent = "Annual Rain Fall: " + town["towns"][fh].averageRainfall;
+            sodaSpringsRain.textContent = "Annual Rain Fall: " + town["towns"][sd].averageRainfall;
 
-            prestonImg.setAttribute('src', "https://picsum.photos/300/200")
-            fishHavenImg.setAttribute('src', "https://picsum.photos/300/200")
-            sodaSpringsImg.setAttribute('src', "https://picsum.photos/300/200")
+            prestonImg.setAttribute('src', "images/home/" + town["towns"][prs].photo);
+            fishHavenImg.setAttribute('src', "images/home/" + town["towns"][fh].photo);
+            sodaSpringsImg.setAttribute('src', "images/home/" + town["towns"][sd].photo);
 
+            prestonImg.setAttribute('alt', "preston-img");
+            fishHavenImg.setAttribute('alt', "fishHaven-img");
+            sodaSpringsImg.setAttribute('alt', "sodaSprings-img");
+
+            // Append the elements
             preston.appendChild(prestonMotto);
             fishHaven.appendChild(fishHavenMotto);
             sodaSprings.appendChild(sodaSpringsMotto);
@@ -77,9 +98,9 @@ function townData() {
             fishHaven.appendChild(fishHavenRain);
             sodaSprings.appendChild(sodaSpringsRain);
 
-            preston.appendChild(prestonImg);
-            fishHaven.appendChild(fishHavenImg);
-            sodaSprings.appendChild(sodaSpringsImg);
+            prestonImgBox.appendChild(prestonImg);
+            fishHavenImgBox.appendChild(fishHavenImg);
+            sodaSpringsImgBox.appendChild(sodaSpringsImg);
         }
         );
 }
