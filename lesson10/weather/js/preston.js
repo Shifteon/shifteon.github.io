@@ -31,7 +31,7 @@ function weather() {
         let weatherDesc = document.querySelector('#weather-desc'); 
 
         weatherDesc.textContent = w.weather[0].main;
-        currHigh.textContent = Math.floor(w.main.temp_max);
+        currHigh.textContent = Math.floor(w.main.temp);
         humidity.textContent = w.main.humidity;
         windSpeed.textContent = w.wind.speed;
     });
