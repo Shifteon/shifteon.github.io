@@ -78,6 +78,7 @@
         width: 300px;
         background-color: #E9FFF9;
         padding: 0 1em 1em 1em;
+        display: block;
         /* opacity: 1; */
     }
 

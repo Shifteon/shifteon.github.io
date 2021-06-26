@@ -108,6 +108,10 @@
         margin: 15px;
     }
 
+    .banner p {
+        font-size: 1.5em;
+    }
+
     .forecast {
         display: grid;
         grid-template-columns: repeat(5, auto);
