@@ -56,7 +56,7 @@ window.addEventListener('load', () => {
     const date = new Date();
     const day = days[date.getDay()];
     const month = months[date.getMonth()];
-    document.querySelector('.footer-bottom').innerHTML = day + ", " + date.getDate() + " " + month + " " + date.getFullYear();
+    document.querySelector('#date').innerHTML = day + ", " + date.getDate() + " " + month + " " + date.getFullYear();
     
     showPancakes(day);
     showForecast();

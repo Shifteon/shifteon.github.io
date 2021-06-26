@@ -84,6 +84,12 @@
     .footer-bottom {
         text-align: left;
         padding-left: 15px;
+        align-items: center;
+    }
+
+    .footer-bottom p {
+        font-size: 1em;
+        margin: 0;
     }
 
     .pancakes {

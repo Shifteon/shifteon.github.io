@@ -61,9 +61,10 @@
 
     .footer-bottom {
         background-color: #1D3354;
-        height: 30px;
+        height: 2.75em;
         display: block;
         padding: 15px 15px 0px 150px;
+        font-size: 1em;
     }
 
     .banner {
