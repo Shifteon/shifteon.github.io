@@ -16,6 +16,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Roboto:wght@400;700&display=swap"
       rel="stylesheet">
     <script src="js/main.js"></script>
+    <script src="js/preston.js"></script>
     <script src="js/windchill.js"></script>
   </head>
 
@@ -53,35 +54,35 @@
         </picture>
         <div class="weather-summary">
           <h2>Weather Summary</h2>
-          <p>Currently: Cloudy</p>
-          <p>High: <span id="tempature">50</span>&deg; F</p>
-          <p>Wind Chill: <span id="wind-chill"></span>&deg; F</p>
-          <p>Humidity: 95%</p>
+          <p>Currently: <span id="weather-desc">Cloudy</span></p>
+          <p>High: <span id="tempature">50</span>&deg;F</p>
+          <p>Wind Chill: <span id="wind-chill"></span></p>
+          <p>Humidity: <span id="humidity">95</span>%</p>
           <p>Wind Speed: <span id="wind-speed">12</span> mph</p>
         </div>
       </section>
       <h2 id="forecast-header">Five Day Forecast <p>&#9661;</p>
       </h2>
       <section class="forecast">
-        <div>
+        <div id="day1">
           <img src="images/cloudy.svg" alt="forecast">
-          <p>69&deg; Cloudy</p>
+          <p><span class="temp">69</span>&deg; <span class="day-desc">Cloudy</span></p>
         </div>
-        <div>
+        <div id="day2">
           <img src="images/cloudy.svg" alt="forecast">
-          <p>62&deg; Cloudy</p>
+          <p><span class="temp">69</span>&deg; <span class="day-desc">Cloudy</span></p>
         </div>
-        <div>
+        <div id="day3">
           <img src="images/cloudy.svg" alt="forecast">
-          <p>73&deg; Cloudy</p>
+          <p><span class="temp">69</span>&deg; <span class="day-desc">Cloudy</span></p>
         </div>
-        <div>
+        <div id="day4">
           <img src="images/cloudy.svg" alt="forecast">
-          <p>70&deg; Cloudy</p>
+          <p><span class="temp">69</span>&deg; <span class="day-desc">Cloudy</span></p>
         </div>
-        <div>
+        <div id="day5">
           <img src="images/cloudy.svg" alt="forecast">
-          <p>65&deg; Cloudy</p>
+          <p><span class="temp">69</span>&deg; <span class="day-desc">Cloudy</span></p>
         </div>
       </section>
       <article>
