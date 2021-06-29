@@ -4,6 +4,10 @@ body {
     font-family: 'Castoro', serif;
 }
 
+h1, h2, h3, h4, h5, h6, a {
+    font-family: 'Montserrat', sans-serif;
+}
+
 nav {
     /* display: grid;
     grid-template-columns: 1fr 1fr; */
@@ -93,15 +97,22 @@ nav {
 
 #call-to-action {
     background-color: #362C28;
-    height: 5em;
+    color: white;
+    height: fit-content;
     margin: 0;
+    padding: .3em;
+    text-align: center;
 }
 
 #call-to-action h2 {
-    text-align: center;
     margin: 0;
     color: white;
     padding-top: 1em;
+}
+
+#call-to-action a {
+    color: white;
+    text-decoration: none;
 }
 
 #home-temple img {
