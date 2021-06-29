@@ -96,6 +96,17 @@ nav {
     display: block;
 }
 
+.banner div {
+    position: relative;
+}
+
+.banner small {
+    position: absolute;
+    bottom: .1em;
+    right: 1em;
+    color: white;
+}
+
 #call-to-action {
     background-color: #362C28;
     color: white;
@@ -123,4 +134,24 @@ nav {
     width: fit-content;
     display: block;
     margin: 1em auto;
+}
+
+#home-temple p {
+    padding: 1em;
+}
+
+footer {
+    background-color: #4281A4;
+    color: white;
+    height: 4em;
+}
+
+footer p {
+    /* margin: 0; */
+    text-align: center;
+}
+
+#footer-bottom {
+    background-color: #1D3A49;
+    height: 3em;
 }
