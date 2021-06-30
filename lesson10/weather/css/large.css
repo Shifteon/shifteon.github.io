@@ -104,11 +104,17 @@
 
     .gallery {
         grid-template-columns: repeat(3, 1fr);
-        width: 900px;
+        min-width: 900px;
+        width: 100%;
+    }
+
+    .gallery-item img {
+        width: 100%;
     }
 
     .gallery-item {
         transition: 500ms;
+        width: 100%;
     }
 
     .gallery-item:hover {
