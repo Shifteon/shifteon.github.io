@@ -73,4 +73,3 @@ function events() {
 }
 
 window.addEventListener('load', events());
-c
