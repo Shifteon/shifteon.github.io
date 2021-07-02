@@ -77,8 +77,12 @@
         text-align: center;
     }
 
-    .contact p:first-of-type {
-        display: block;
+    .contact .bottom-contact:first-of-type {
+        display: grid;
+    }
+
+    .bottom-contact {
+        margin-left: 1.5em;
     }
 
     .footer-bottom {
@@ -178,6 +182,7 @@
 
     #towns section img {
         padding: 1em;
+        /* display: inline-block; */
     }
 
     #towns section:nth-of-type(2) img {
@@ -188,5 +193,9 @@
     #towns section:nth-of-type(2) .town-info {
         grid-column: 2/3;
         grid-row: 1/2;
+    }
+
+    #towns section .motto {
+        font-size: .8em;
     }
 }

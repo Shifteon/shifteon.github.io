@@ -28,6 +28,10 @@
         justify-content: center;
     }
 
+    .bottom-contact {
+        margin-left: 1.2em;
+    }
+
     .map {
         grid-column: 1/2;
         grid-row: 1/2;
@@ -42,7 +46,7 @@
     .social {
         display: block;
         grid-column: 2/3;
-        margin-top: 10px;
+        margin-top: 3em;
     }
 
     .social img {
@@ -65,6 +69,10 @@
         display: block;
         padding: 15px 15px 0px 150px;
         font-size: 1em;
+    }
+
+    .bottom-contact {
+        margin-bottom: 1.5em;
     }
 
     .banner {
@@ -150,5 +158,17 @@
     #towns section img {
         width: 95%;
         padding: .5em;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .bottom-contact {
+        margin-left: .9em;
+    }
+}
+
+@media only screen and (min-width: 1350px) {
+    .bottom-contact {
+        margin-left: .7em;
     }
 }

@@ -1,5 +1,5 @@
 async function getFiveDay() {
-    const url = "https://api.openweathermap.org/data/2.5/forecast?id=5604473&units=imperial&appid=be8753d36dab0642baf37a7f8906882f";
+    const url = "https://api.openweathermap.org/data/2.5/forecast?zip=83287,us&units=imperial&appid=be8753d36dab0642baf37a7f8906882f";
 
     const response = await fetch(url);
     if (response.status == 200) {
@@ -10,7 +10,7 @@ async function getFiveDay() {
 }
 
 async function getCurrWeather() {
-    const url = "https://api.openweathermap.org/data/2.5/weather?id=5604473&units=imperial&appid=be8753d36dab0642baf37a7f8906882f";
+    const url = "https://api.openweathermap.org/data/2.5/weather?zip=83287,us&units=imperial&appid=be8753d36dab0642baf37a7f8906882f";
 
     const response = await fetch(url);
     if (response.status == 200) {
@@ -75,12 +75,12 @@ function events() {
 
             // Find the index for the towns
             for (item in town["towns"]) {
-                if (town["towns"][item].name == "Preston")
-                    var prs = item;
+                if (town["towns"][item].name == "Fish Haven")
+                    var fh = item;
             }
 
             const eventSection = document.querySelector('#events');
-            for (item of town["towns"][prs].events) {
+            for (item of town["towns"][fh].events) {
                 console.log(item)
                 let p = document.createElement('p');
                 p.textContent = item;

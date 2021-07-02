@@ -8,13 +8,14 @@
     <title>Preston Weather</title>
     <meta name="description" content="Weather site for Preston Idaho built for runners.">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../../css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/medium.css">
     <link rel="stylesheet" href="css/large.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Roboto:wght@400;700&display=swap"
       rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="js/main.js"></script>
     <script src="js/preston.js"></script>
     <script src="js/windchill.js"></script>
@@ -47,10 +48,10 @@
       <h1 id="preston-header">Preston Idaho</h1>
       <section class="banner">
         <picture>
-          <source media="(max-width: 425px)" srcset="images/banner425.jpg">
-          <source media="(max-width: 768px)" srcset="images/banner768.jpg">
-          <source media="(max-width: 1024px)" srcset="images/banner1024.jpg">
-          <img src="images/banner1024.jpg" alt="banner">
+          <source media="(max-width: 425px)" srcset="images/banners/preston425.jpg">
+          <source media="(max-width: 768px)" srcset="images/banners/preston768.jpg">
+          <source media="(max-width: 1024px)" srcset="images/banners/preston1024.jpg">
+          <img src="images/banners/preston1024.jpg" alt="banner">
         </picture>
         <div class="weather-summary">
           <h2>Weather Summary</h2>
@@ -85,6 +86,9 @@
           <p><span class="temp">69</span>&deg; <span class="day-desc">Cloudy</span></p>
         </div>
       </section>
+      <section id="events">
+        <h3>Upcoming Events!</h3>
+      </section>
       <article>
         <header>
           <h2>Article Title</h2>
@@ -99,11 +103,7 @@
           ad. Exercitationem similique cum hic cumque explicabo nesciunt! Inventore incidunt fugiat quod quia magni
           corporis atque possimus esse repudiandae magnam laudantium consectetur perspiciatis quo fugit, maxime minima
           voluptas? Cumque corrupti, nostrum hic ea perferendis atque maiores, saepe cupiditate iste non nisi reiciendis
-          ducimus similique. Unde sequi natus, velit et blanditiis quo nemo, nisi accusamus quos laborum neque non animi
-          quod reprehenderit deleniti iure totam! Vel et distinctio accusantium quo, enim id. Quae vero eum nobis
-          assumenda quos. Vero repellat animi voluptate deleniti, nobis exercitationem labore quas veniam necessitatibus
-          possimus autem cumque nisi delectus ducimus nostrum veritatis sequi. Iste, temporibus incidunt quasi,
-          veritatis et fuga, neque dignissimos similique dolorum ullam sit repellat asperiores?
+          ducimus similique.
         </p>
       </article>
     </main>
@@ -111,9 +111,18 @@
       <section>
         <div class="contact">
           <h3>Contact Information</h3>
-          <p>&#128205; Address</p>
-          <p>&#9742; Phone</p>
-          <p>&#9993; Email</p>
+          <div class="bottom-contact">
+            <span class="material-icons">place</span>
+            <p> 566 Poplar Chase Lane, Rexburg ID 83440</p>
+          </div>
+          <div class="bottom-contact">
+            <span class="material-icons">call</span>
+              <p> (208) 345-4456</p>
+          </div>
+          <div class="bottom-contact">
+            <span class="material-icons">email</span>
+              <p> runinidaho@gmail.com</p>
+          </div>
           <div class="social">
             <a href="#"><img src="images/facebook.png" alt="social link"></a>
             <a href="#"><img src="images/instagram.png" alt="social link"></a>
