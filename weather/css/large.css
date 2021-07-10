@@ -65,10 +65,12 @@
 
     .footer-bottom {
         background-color: #1D3354;
-        height: 2.75em;
+        min-height: 2.75em;
+        max-height: fit-content;
         display: block;
-        padding: 15px 15px 0px 150px;
+        padding: 1em 1em .5em 2em;
         font-size: 1em;
+        text-align: left;
     }
 
     .bottom-contact {
@@ -170,5 +172,11 @@
 @media only screen and (min-width: 1350px) {
     .bottom-contact {
         margin-left: .7em;
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    .footer-bottom {
+        /* padding: 15px 15px 0px 150px; */
     }
 }

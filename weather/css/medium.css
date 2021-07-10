@@ -86,7 +86,7 @@
     }
 
     .footer-bottom {
-        text-align: left;
+        text-align: center;
         padding-left: 15px;
         align-items: center;
     }
@@ -140,6 +140,7 @@
     article p img {
         float: right;
         width: 300px;
+        padding-left: .5em;
     }
 
     article p {
