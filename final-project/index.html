@@ -16,6 +16,8 @@
 
     <link rel="stylesheet" href="../css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/medium.css">
+    <link rel="stylesheet" href="css/large.css">
     <script src="js/main.js"></script>
   </head>
 
@@ -26,7 +28,7 @@
       </section>
       <ul id="navigation">
         <li><a class="ham" href="#">☰</a></li>
-        <li><a href="index.html">Home</a></li>
+        <li class="active"><a href="index.html">Home</a></li>
         <li><a href="reservation.html">Reservation</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="temple.html">Temples</a></li>
@@ -37,21 +39,25 @@
     <main>
       <section class="banner">
         <div>
-          <img src="images/rexburg_temple.jpeg" alt="banner">
+          <picture>
+            <source media="(max-width: 425px)" srcset="images/banner425.jpg">
+            <source media="(max-width: 768px)" srcset="images/banner768.jpg">
+            <source media="(max-width: 1024px)" srcset="images/banner1024.jpg">
+            <source media="(max-width: 1440px)" srcset="images/banner1440.jpg">
+            <img src="images/banner1440.jpg" alt="banner">
+          </picture>
           <small>Rexburg, Idaho</small>
         </div>
-        <!-- <img src="https://picsum.photos/425/300" alt=""> -->
         <section id="call-to-action">
           <h2>Go to the Temple</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi tempora rerum, impedit fugit harum et?
-          </p>
+          <p>It only gets better</p>
           <a href="reservation.html">Make a reservation ></a>
         </section>
       </section>
 
       <section id="home-temple">
         <h2>A Temple We Serve</h2>
-        <img src="https://picsum.photos/350/200" alt="temple">
+        <img src="https://picsum.photos/500/400" alt="temple">
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur amet saepe ipsam ratione ullam maxime
           laudantium aperiam maiores iure? Placeat quas, unde deserunt, maiores repellendus, aut rerum enim nam earum
           fugit doloremque tempora eius excepturi id neque adipisci fugiat ab est consectetur temporibus iure

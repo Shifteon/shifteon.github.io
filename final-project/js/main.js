@@ -8,6 +8,18 @@ function openNav() {
     }, false);
 }
 
+function getTemples() {
+    const url = "js/temples.json";
+    fetch(url)
+        .then((response) => {
+            return response.json();
+        })
+        .then((temples) => {
+            console.log(temples.seattle);
+        });
+}
+
 window.addEventListener('load', () => {
     openNav();
+    getTemples();
 });

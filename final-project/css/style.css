@@ -1,4 +1,4 @@
-/* https://coolors.co/ffffff-f5e2c8-3891a6-413c58 */
+/* https://coolors.co/362c28-4281a4-191919-ffffff-f5e2c8-17b890 */
 
 body {
     font-family: 'Castoro', serif;
@@ -103,7 +103,7 @@ nav {
 .banner small {
     position: absolute;
     bottom: .1em;
-    right: 1em;
+    left: 1em;
     color: white;
 }
 
@@ -121,6 +121,10 @@ nav {
     color: white;
 }
 
+#call-to-action p {
+    font-family: 'Montserrat', sans-serif;
+}
+
 #call-to-action a {
     color: white;
     text-decoration: none;
@@ -131,7 +135,7 @@ nav {
 }
 
 #home-temple img {
-    width: fit-content;
+    width: 300px;
     display: block;
     margin: 1em auto;
 }
