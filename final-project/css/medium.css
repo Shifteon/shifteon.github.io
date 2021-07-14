@@ -2,4 +2,14 @@
     .banner img {
         height: 400px;
     }
+
+    /* Reservation styles */
+    #reservation-hero h1 {
+        font-size: 3em;
+    }
+    
+    #reservation-hero h3 {
+        font-size: 2em;
+        max-width: 400px;
+    }
 }
