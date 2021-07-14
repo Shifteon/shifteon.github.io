@@ -4,7 +4,7 @@ body {
     font-family: 'Castoro', serif;
 }
 
-h1, h2, h3, h4, h5, h6, a {
+h1, h2, h3, h4, h5, h6, a, button, input, label {
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -128,6 +128,10 @@ nav {
 #call-to-action a {
     color: white;
     text-decoration: none;
+}
+
+#search {
+    display: none;
 }
 
 #home-temple h2 {
