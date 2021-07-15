@@ -127,7 +127,7 @@
         <label for="date">Date</label>
         <input type="date" name="date" id="date">
         <label for="rooms">Rooms</label>
-        <input type="number" name="rooms" id="rooms" min="1" max="10" onchange="getRoomType(this.value)">
+        <input type="number" name="rooms" id="rooms" min="1" max="10" oninput="getRoomType(this.value)" onchange="getRoomType(this.value)">
         <!-- <label for="room-type">Room Type</label>
         <select name="room-type" id="room-type">
           <option value="0" disabled>Select Room Type...</option>

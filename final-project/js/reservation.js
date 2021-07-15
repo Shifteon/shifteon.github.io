@@ -37,3 +37,5 @@ function getRoomType(value) {
         }
     }
 }
+
+// window.addEventListener('load', getRoomType(1));
