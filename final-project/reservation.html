@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="css/medium.css">
     <link rel="stylesheet" href="css/large.css">
     <script src="js/main.js"></script>
+    <script src="js/reservation.js"></script>
   </head>
 
   <body>
@@ -53,7 +54,7 @@
       <form action="post">
         <h2>Personal Info</h2>
         <label for="name">Name</label>
-        <input type="text" name="name" id="name" placeholder="Name">
+        <input type="text" name="name" id="name" pattern="[A-Za-z\s]{5,}[A-Za-z]" placeholder="Name">
         <label for="email">Email</label>
         <input type="email" name="email" id="email" placeholder="Email">
         <label for="phone">Phone Number</label>
@@ -126,14 +127,16 @@
         <label for="date">Date</label>
         <input type="date" name="date" id="date">
         <label for="rooms">Rooms</label>
-        <select name="rooms" id="rooms">
+        <input type="number" name="rooms" id="rooms" min="1" max="10" onchange="getRoomType(this.value)">
+        <!-- <label for="room-type">Room Type</label>
+        <select name="room-type" id="room-type">
           <option value="0" disabled>Select Room Type...</option>
           <option value="1">Standard</option>
           <option value="2">Deluxe</option>
           <option value="3">Joint</option>
           <option value="4">Suite</option>
           <option value="5">Accessible</option>
-        </select>
+        </select> -->
 
         <label for="comments">Special Accommodations/Comments</label>
         <textarea name="comments" id="comments" cols="30" rows="10"></textarea>
