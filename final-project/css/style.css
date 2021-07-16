@@ -20,7 +20,7 @@ nav {
     grid-column: 1/2;
     grid-row: 1/2;
     z-index: 100;
-    padding-left: 1em;
+    /* padding-left: 1em; */
     max-height: 60px;
     height: fit-content;
     /* background-color: #B66D0D; */
@@ -267,4 +267,53 @@ form input.submit-btn:hover {
     #reservation-hero h1 {
         font-size: 1.75em;
     }
+}
+
+/* Services styles */
+#services-hero {
+    background-color: #F5E2C8;
+    text-align: center;
+    padding: 1em;
+    margin-bottom: 1em;
+}
+
+#services-hero h1 {
+    /* font-size: 1.5em; */
+    margin-top: 0;
+}
+
+#services-hero img {
+    width: 50%;
+}
+
+#amenities, #services {
+    width: 90%;
+    margin: 0 auto;
+}
+
+#amenities h2, #services h2 {
+    text-align: center;
+    background-color: lightgray;
+    border-radius: .5em;
+    /* color: white; */
+    padding: .4em;
+    margin: 0;
+}
+
+#amenities section, #services section {
+    /* background-color: lightgray; */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    margin-top: .5em;
+}
+
+.amenity, .service {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+}
+
+.amenity p, .service p {
+    margin-top: 0;
 }

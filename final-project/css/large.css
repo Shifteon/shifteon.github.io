@@ -167,6 +167,14 @@
     }
 
     /* Reservation styles */
+    #reservation-hero h1 {
+        margin-left: 3em;
+    }
+
+    #reservation-hero h3 {
+        margin-left: 5em;
+    }
+
     form {
         width: 70%;
         /* margin: 0; */
