@@ -8,17 +8,6 @@ function openNav() {
     }, false);
 }
 
-function getTemples() {
-    const url = "js/temples.json";
-    fetch(url)
-        .then((response) => {
-            return response.json();
-        })
-        .then((temples) => {
-            console.log(temples.seattle);
-        });
-}
-
 function getDate() {
     // Set the date on the footer
     const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
@@ -32,5 +21,4 @@ function getDate() {
 window.addEventListener('load', () => {
     openNav();
     getDate();
-    getTemples();
 });

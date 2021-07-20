@@ -218,4 +218,34 @@
     .popup button {
         margin-left: 10em;
     }
+
+    /* Temple styles */
+    .temple {
+        /* width: 100%; */
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-content: center;
+        justify-items: center;
+        /* text-align: center; */
+    }
+
+    .temple img {
+        grid-row: 1/2;
+        grid-column: 1/2;
+    }
+
+    .temple h1 {
+        grid-row: 2/3;
+        grid-column: 1/2;
+        align-self: start;
+    }
+
+    .temple-info {
+        width: 90%;
+    }
+
+    .temple-closures.display {
+        width: 80%;
+        grid-column: 1/-1;
+    }
 }

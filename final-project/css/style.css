@@ -474,3 +474,47 @@ form input.submit-btn:hover {
     margin-bottom: 1em;
     width: 10em;
 }
+
+/* Temple styles */
+.temple {
+    width: 90%;
+    margin: 1em auto 0 auto;
+}
+
+.temple img {
+    width: 100%;
+    display: block;
+}
+
+.temple h1 {
+    text-align: center;
+    margin-top: 0;
+}
+
+.closures-header {
+    cursor: pointer;
+    display: grid;
+    align-items: center;
+    grid-template-columns: 85px 10px;
+}
+
+.temple-closures {
+    /* display: grid;
+    grid-template-columns: 1fr 1fr; */
+    display: none;
+    /* background-color: #362C28; */
+    color: white;
+    text-align: center;
+    padding: .5em;
+}
+
+.temple-closures.display {
+    display: block;
+}
+
+.temple-closures p {
+    /* border-bottom: 1px solid white; */
+    background-color: #17B890;
+    border-radius: 1em;
+    padding: .5em;
+}
