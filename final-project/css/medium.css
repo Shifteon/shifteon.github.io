@@ -59,5 +59,14 @@
         margin: 0 auto;
     }
 
-    
+    /* Contact styles */
+    #contact-header {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+    }
+
+    #contact-header p {
+        margin-bottom: 0;
+    }
 }

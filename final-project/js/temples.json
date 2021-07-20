@@ -18,7 +18,7 @@
              "Monday, 11 April 2022 - Monday, 4 July 2022", "Saturday, 23 July 2022", "Saturday, 1 October 2022",
              "Wednesday, 23 November 2022 - Thursday, 24 November 2022", "Saturday, 24 December 2022",
              "Saturday, 31 December 2022"],
-        "city-id": 5605242
+        "cityId": 5605242
     },
     "sacramento": {
         "image": "sacramento-temple.jpg",
@@ -40,7 +40,7 @@
                      "Monday, 11 April 2022 - Monday, 4 July 2022", "Saturday, 23 July 2022",
                      "Saturday, 1 October 2022", "Wednesday, 23 November 2022 - Thursday, 24 November 2022",
                      "Saturday, 24 December 2022", "Saturday, 31 December 2022"],
-        "city-id": 5389489
+        "cityId": 5389489
     },
     "seattle": {
         "image": "seattle-temple.jpg",
@@ -56,7 +56,7 @@
         "sessionSched": "By Appointment",
         "closures": ["Monday, 9 August 2021 - Monday, 23 August 2021", "Saturday, 2 October 2021",
                      "Wednesday, 24 November 2021 - Thursday, 25 November 2021", "Saturday, 25 December 2021"],
-        "city-id": 5809844
+        "cityId": 5809844
     },
     "provo": {
         "image": "provo-temple.jpg",
@@ -72,6 +72,6 @@
         "sessionSched": "By Appointment",
         "closures": ["Saturday, 24 July 2021", "Saturday, 2 October 2021", "Wednesday, 24 November 2021",
                      "Thursday, 25 November 2021", "Monday, 29 November 2021 - Monday, 24 January 2022"],
-        "city-id": 5780026
+        "cityId": 5780026
     }
 }

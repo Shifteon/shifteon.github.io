@@ -139,6 +139,10 @@
         min-width: fit-content;
     }
 
+    #home-temple {
+        align-items: start;
+    }
+
     #home-temple .temple-img {
         grid-row: 1/2;
         grid-column: 1/2;
@@ -242,5 +246,25 @@
     .temple-closures.display {
         width: 80%;
         grid-column: 1/-1;
+    }
+
+    /* Contact styles */
+    #contact-header img {
+        width: 50%;
+    }
+
+    #contact-info {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin-top: 1em;
+    }
+
+    #contact-info iframe {
+        justify-self: end;
+        align-self: center;
+    }
+
+    #contact-info form {
+        margin: 0;
     }
 }

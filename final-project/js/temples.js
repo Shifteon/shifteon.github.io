@@ -1,3 +1,33 @@
+async function getWeather(cityId) {
+    const url = `https://api.openweathermap.org/data/2.5/weather?id=${cityId}&units=imperial&appid=be8753d36dab0642baf37a7f8906882f`;
+
+    let response = await fetch(url);
+    if (response.status == 200) {
+        return response.json();
+    } else {
+        throw new Error("No weather found " + response.status);
+    }
+}
+
+function templeWeather(cityId) {
+    const result = getWeather(cityId)
+        .then((w) => {
+            console.log(w);
+
+            let weather = document.createElement('section');
+            weather.classList.add('temple-weather');
+            let imgSrc = "http://openweathermap.org/img/wn/" + w.weather[0].icon + "@2x.png"
+            weather.innerHTML = `
+                <h2>Current Weather</h2>
+                <img src="${imgSrc}" alt="Weather icon"/>
+                <h3>69&deg;</h3>`;
+            console.log(weather);
+
+            return weather;
+        });
+    return weather;
+}
+
 function getTemples() {
     const url = "js/temples.json";
     fetch(url)
@@ -20,14 +50,31 @@ function getTemples() {
                 img.setAttribute('alt', temples[temple].imageAlt);
                 imgContainer.appendChild(img);
 
-                let div = document.createElement('div');
-                div.classList.add('temple-info');
-
                 let header = document.createElement('h1');
                 header.textContent = temples[temple].name;
                 imgContainer.appendChild(header);
 
+                // let weather = templeWeather(temples[temple].cityId);
+                let weather = document.createElement('section');
+                const result = getWeather(temples[temple].cityId)
+                    .then((w) => {
+                        console.log(w);
+
+                        weather.classList.add('temple-weather');
+                        let imgSrc = "http://openweathermap.org/img/wn/" + w.weather[0].icon + "@2x.png"
+                        weather.innerHTML = `
+                        <h2>Current Weather</h2>
+                        <div>
+                            <img src="${imgSrc}" alt="Weather icon" class="weather-icon"/>
+                            <h4>${Math.round(w.main.temp)}&deg; ${w.weather[0].main}</h4>
+                        </div>`;
+                    });
+                imgContainer.appendChild(weather);
+
                 section.appendChild(imgContainer);
+
+                let div = document.createElement('div');
+                div.classList.add('temple-info');
 
                 let addressHeader = document.createElement('h3');
                 addressHeader.textContent = "Address";
@@ -53,7 +100,7 @@ function getTemples() {
                 for (service of temples[temple].services) {
                     let item = document.createElement('li');
                     item.textContent = service;
-                    services.appendChild(item); 
+                    services.appendChild(item);
                 }
                 div.appendChild(services);
 
