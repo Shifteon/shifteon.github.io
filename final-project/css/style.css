@@ -42,6 +42,10 @@ nav {
     background-color: white;
 }
 
+.center {
+    text-align: center;
+}
+
 #logo-box {
     grid-column: 1/2;
     grid-row: 1/2;
@@ -158,20 +162,6 @@ nav {
 
 #search {
     display: none;
-}
-
-#home-temple h2 {
-    text-align: center;
-}
-
-#home-temple img {
-    width: 300px;
-    display: block;
-    margin: 1em auto;
-}
-
-#home-temple p {
-    padding: 1em;
 }
 
 #thing {
@@ -510,6 +500,8 @@ form input.submit-btn:hover {
 
 .temple-closures.display {
     display: block;
+    height: 150px;
+    overflow: auto;
 }
 
 .temple-closures p {

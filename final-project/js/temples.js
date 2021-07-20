@@ -13,6 +13,7 @@ function getTemples() {
                 section.classList.add('temple');
 
                 let imgContainer = document.createElement('div');
+                imgContainer.classList.add('temple-img');
 
                 let img = document.createElement('img');
                 img.src = "images/" + temples[temple].image;

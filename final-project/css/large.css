@@ -139,19 +139,14 @@
         min-width: fit-content;
     }
 
-    #home-temple {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
+    #home-temple .temple-img {
+        grid-row: 1/2;
+        grid-column: 1/2;
     }
 
-    #home-temple h2 {
-        grid-column: 1/-1;
-    }
-
-    #home-temple img {
-        margin: 1em 0;
-        justify-self: center;
-        width: fit-content;
+    #home-temple .temple-info {
+        grid-row: 1/2;
+        grid-column: 2/3;
     }
 
     /* Reservation styles */
@@ -226,18 +221,18 @@
         grid-template-columns: 1fr 1fr;
         justify-content: center;
         justify-items: center;
+        align-items: center;
         /* text-align: center; */
     }
 
-    .temple img {
+    .temple:nth-child(even) .temple-img {
+        grid-column: 2/3;
         grid-row: 1/2;
-        grid-column: 1/2;
     }
 
-    .temple h1 {
-        grid-row: 2/3;
+    .temple:nth-child(even) .temple-info {
         grid-column: 1/2;
-        align-self: start;
+        grid-row: 1/2;
     }
 
     .temple-info {
