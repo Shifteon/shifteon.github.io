@@ -137,19 +137,6 @@
         width: 9em;
         height: fit-content;
         min-width: fit-content;
-        padding: 1em;
-        border-radius: 1.5em;
-        border: none;
-        cursor: pointer;
-        font-weight: bold;
-        background-color: #17B890;
-        color: white;
-        transition: 300ms;
-    }
-
-    #search button:hover {
-        color: #17B890;
-        background-color: white;
     }
 
     #home-temple {
@@ -180,5 +167,55 @@
         width: 70%;
         /* margin: 0; */
         /* margin-left: 1em; */
+    }
+
+    /* Services styles */
+    #services-hero {
+        justify-items: start;
+        grid-template-columns: 40% 60%;
+    }
+
+    #services-hero img {
+        justify-self: end;
+    }
+
+    #services-hero #hero-content button {
+        margin-left: 1.5em;
+    }
+
+    #services-head {
+        margin-bottom: 5em;
+    }
+
+    #services-head img {
+        height: 300px;
+        object-fit: cover;
+    }
+
+    #services-head div {
+        align-self: start;
+        justify-self: center;
+        width: 80%;
+    }
+
+    .services-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    #services {
+        margin-bottom: 4em;
+    }
+
+    .popup .card {
+        width: 70%;
+    }
+
+    .popup .card ul {
+        margin-left: 5em;
+    }
+
+    .popup button {
+        margin-left: 10em;
     }
 }
