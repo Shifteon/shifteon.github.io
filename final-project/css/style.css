@@ -104,6 +104,10 @@ nav {
     border-bottom: 1px solid lightgray;
 }
 
+#navigation.responsive li.active {
+    background-color: rgba(0, 0, 0, .55);
+}
+
 #navigation.responsive li:nth-of-type(1) {
     justify-self: end;
     border-bottom: none;
