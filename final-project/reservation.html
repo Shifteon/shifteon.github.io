@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Temple Inn & Suites | Reservation</title>
+    <meta name="description" content="Reservation page for temple inn & suites. Make a reservation">
     <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
@@ -128,15 +129,6 @@
         <input type="date" name="date" id="date" required>
         <label for="rooms">Rooms</label>
         <input type="number" name="rooms" id="rooms" min="1" max="10" oninput="getRoomType(this.value)" onchange="getRoomType(this.value)" required>
-        <!-- <label for="room-type">Room Type</label>
-        <select name="room-type" id="room-type">
-          <option value="0" disabled>Select Room Type...</option>
-          <option value="1">Standard</option>
-          <option value="2">Deluxe</option>
-          <option value="3">Joint</option>
-          <option value="4">Suite</option>
-          <option value="5">Accessible</option>
-        </select> -->
 
         <label for="comments">Special Accommodations/Comments</label>
         <textarea name="comments" id="comments" cols="30" rows="10"></textarea>
