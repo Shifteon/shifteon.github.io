@@ -153,6 +153,10 @@
         grid-column: 2/3;
     }
 
+    #footer-bottom {
+        padding: 0 10em .2em 10em;
+    }
+
     /* Reservation styles */
     #reservation-hero h1 {
         margin-left: 3em;

@@ -164,7 +164,7 @@ nav {
     display: none;
 }
 
-#thing {
+#mini-nav {
     height: 5em;
     width: 90%;
     margin: 0 auto;
@@ -172,7 +172,7 @@ nav {
     text-align: center;
 }
 
-#thing a {
+#mini-nav a {
     display: inline-block;
     color: white;
     margin: .3em;
