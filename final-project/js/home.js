@@ -18,7 +18,7 @@ function homeTemple() {
 
             console.log(temples);
             let main = document.querySelector('main');
-            let thing = document.querySelector('#thing');
+            let miniNav = document.querySelector('#mini-nav');
 
             let section = document.createElement('section');
             section.classList.add('temple');
@@ -86,7 +86,7 @@ function homeTemple() {
             div.appendChild(session);
 
             section.appendChild(div);
-            main.insertBefore(section, thing);
+            main.insertBefore(section, miniNav);
         });
 }
 

@@ -51,14 +51,14 @@
         <h1>Your stay, Your way</h1>
         <h3>We promise a great stay everytime</h3>
       </section>
-      <form action="post">
+      <form action="thanks.html">
         <h2>Personal Info</h2>
         <label for="name">Name</label>
-        <input type="text" name="name" id="name" pattern="[A-Za-z\s]{5,}[A-Za-z]" placeholder="Name">
+        <input type="text" name="name" id="name" pattern="[A-Za-z\s]{5,}[A-Za-z]" placeholder="Name" required>
         <label for="email">Email</label>
-        <input type="email" name="email" id="email" placeholder="Email">
+        <input type="email" name="email" id="email" placeholder="Email" required>
         <label for="phone">Phone Number</label>
-        <input type="number" name="phone" id="phone" placeholder="Phone">
+        <input type="number" name="phone" id="phone" placeholder="Phone" required>
         <label for="state">State</label>
         <input list="united_states" name="state" id="state" placeholder="State">
         <datalist id="united_states">
@@ -117,7 +117,7 @@
 
         <h2>Hotel Info</h2>
         <label for="location">Location</label>
-        <select name="location" id="location">
+        <select name="location" id="location" required>
           <option value="0" disabled>Select Location...</option>
           <option value="1">Rexburg, Idaho</option>
           <option value="2">Seattle, Washington</option>
@@ -125,9 +125,9 @@
           <option value="4">Provo, Utah</option>
         </select>
         <label for="date">Date</label>
-        <input type="date" name="date" id="date">
+        <input type="date" name="date" id="date" required>
         <label for="rooms">Rooms</label>
-        <input type="number" name="rooms" id="rooms" min="1" max="10" oninput="getRoomType(this.value)" onchange="getRoomType(this.value)">
+        <input type="number" name="rooms" id="rooms" min="1" max="10" oninput="getRoomType(this.value)" onchange="getRoomType(this.value)" required>
         <!-- <label for="room-type">Room Type</label>
         <select name="room-type" id="room-type">
           <option value="0" disabled>Select Room Type...</option>

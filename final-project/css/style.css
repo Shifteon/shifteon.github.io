@@ -580,3 +580,18 @@ form input.submit-btn:hover {
     margin: 0 auto;
     display: block;
 }
+
+/* Thanks styles */
+#thanks-main {
+    min-height: 75vh;
+}
+
+#thanks-main img {
+    width: 200px;
+    margin: 0 auto;
+    display: block;
+}
+
+#thanks-main h3 {
+    font-weight: normal;
+}
