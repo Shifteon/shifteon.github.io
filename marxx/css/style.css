@@ -1,5 +1,11 @@
+/* https://coolors.co/d3d3d3-7a2843-ffffff-000000-cdc3bb */
+
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Playfair Display', serif;
+}
+
+h1, h2, h3, h4, h5, h6, .button, #navigation li a {
+    font-family: 'Montserrat', sans-serif;
 }
 
 header#main-header {
@@ -58,15 +64,68 @@ header#main-header {
     width: 100%;
 }
 
+footer {
+    background-color: #EBEBEB;
+    padding: 1em;
+}
+
+#footer-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+footer .contact p {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    padding: 0 .5em;
+}
+
+footer .contact a {
+    display: block;
+    padding: .5em .5em;
+    color: black;
+    font-family: 'Montserrat', sans-serif;
+}
+
+footer .social {
+    /* display: grid;
+    grid-template-columns: 1fr 1fr; */
+    /* margin-top: 1em; */
+    width: fit-content;
+    justify-self: end;
+    align-self: center;
+}
+
+footer .social img {
+    width: 50px;
+}
+
+footer .copyright {
+    color: black;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    margin-bottom: 0;
+}
+
 .hero {
     display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: repeat(3, 33%);
 }
 
 .hero img {
     width: 100%;
     grid-column: 1/-1;
     grid-row: 1/-1;
+}
+
+.hero picture {
+    width: 100%;
+    grid-column: 1/-1;
+    grid-row: 1/-1;
+}
+
+.hero .content-box {
+    display: none;
 }
 
 .button {
@@ -108,7 +167,7 @@ header#main-header {
     grid-row: 1/-1;
     grid-column: 1/-1;
 
-    transition: 1s;
+    transition: .5s;
 }
 
 .content.blurred img {
@@ -125,7 +184,7 @@ header#main-header {
 
     z-index: 100;
     /* display: none; */
-    transition: 1s;
+    transition: .5s;
 }
 
 .content.blurred div p {
@@ -133,6 +192,29 @@ header#main-header {
     text-shadow: black;
     color: white;
 }
+
+.info-box {
+    text-align: center;
+    background-color: #EBEBEB;
+    /* width: 90%; */
+    margin: 1em auto;
+    padding: .5em;
+}
+
+.info-box h2 {
+    margin-bottom: 0;
+}
+
+.info-box p {
+    /* text-align: left; */
+    font-size: 1.2em;
+    /* margin: .2em; */
+}
+
+/* .info-box div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+} */
 
 #shop-now div img {
     width: 100%;
