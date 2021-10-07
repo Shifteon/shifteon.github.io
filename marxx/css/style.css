@@ -328,12 +328,13 @@ footer .copyright {
     width: 95%;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     grid-gap: .5em;
 }
 
 #product-selection img {
     width: 100%;
+    border: 1px solid lightgray;
 }
 
 #product-next {
