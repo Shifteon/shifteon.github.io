@@ -25,7 +25,6 @@ function changeImage() {
 
     let imageSrc = `images/hoodies/${design}_${color}.jpg`;
     image.setAttribute('src', imageSrc);
-    image.setAttribute('');
 }
 
 function overlaySize() {
