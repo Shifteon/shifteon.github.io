@@ -19,7 +19,8 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+button {
     font-family: 'Roboto', sans-serif;
 }
 
@@ -133,6 +134,35 @@ footer p {
 /* Project styles */
 #projects {
     background-color: #EE6C4D;
+    max-height: 700px;
+    overflow: hidden;
+    position: relative;
+    transition: max-height 1s ease-out;
+}
+
+#projects.expanded {
+    max-height: 2000px;
+    transition: max-height 0.75s ease-in;
+}
+
+#projects button {
+    position: absolute;
+    bottom: 1.5em;
+    left: 47%;
+    z-index: 1000;
+    background-color: #293241;
+    border: none;
+    border-radius: 1em;
+    padding: .75em;
+    font-size: 1em;
+    color: white;
+    cursor: pointer;
+    transition: 300ms;
+}
+
+#projects button:hover {
+    background-color: white;
+    color: #293241;
 }
 
 #project-header {
