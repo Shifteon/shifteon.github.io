@@ -1,0 +1,37 @@
+body {
+    background-color: #648c1a;
+    text-align: center;
+}
+
+header {
+    background-color: orange;
+}
+
+footer {
+    background-color: red;
+}
+
+.profile {
+    width: 300px;
+    margin: 0 auto;
+    background-color: #004d71;
+    color: white;
+    padding: 1em;
+    font-family: Arial, Helvetica, sans-serif;
+    /* #648c1a */
+}
+
+img {
+    width: 50%;
+    border-radius: 100%;
+    margin: 0 auto;
+}
+
+#person-name {
+    margin-bottom: 0;
+}
+
+#city-country {
+    margin-top: 0;
+    border-bottom: 1px solid white;
+}

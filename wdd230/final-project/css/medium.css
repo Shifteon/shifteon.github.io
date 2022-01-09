@@ -1,0 +1,72 @@
+@media only screen and (min-width: 768px) {
+    .banner img {
+        height: 400px;
+    }
+
+    /* Reservation styles */
+    #reservation-hero h1 {
+        font-size: 3em;
+    }
+    
+    #reservation-hero h3 {
+        font-size: 2em;
+        max-width: 400px;
+    }
+
+    /* Services styles */
+    #services-hero {
+        height: 150px;
+        display: grid;
+        grid-template-columns: 1fr 4fr;
+        align-items: center;
+    }
+
+    #services-hero img {
+        width: 150px;
+        grid-row: 1/-1;
+    }
+
+    #services-hero #hero-content {
+        grid-column: 2/3;
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+    }
+
+    #services-hero #hero-text {
+        grid-column: 1/2;
+        grid-row: 1/2;
+        align-self: center;
+    }
+
+    #services-hero #hero-content button {
+        height: 3.5em;
+        align-self: center;
+    }
+
+    #services-hero h2 {
+        margin-bottom: .2em;
+    }
+
+    #services-head {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+    }
+
+    .popup .card .content {
+        /* padding-left: 5em; */
+        width: 70%;
+        margin: 0 auto;
+    }
+
+    /* Contact styles */
+    #contact-header {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+    }
+
+    #contact-header p {
+        margin-bottom: 0;
+    }
+}

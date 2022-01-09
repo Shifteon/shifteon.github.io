@@ -1,0 +1,174 @@
+/* https://coolors.co/d64045-467599-e9fff9-1d3354 */
+
+/* General Styles */
+html {
+    height: fit-content;
+}
+
+nav {
+    margin: 0 auto;
+    background-color: #D64045;
+    max-width: 425px;
+    font-family: 'Roboto', sans-serif;
+}
+
+#navigation {
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: auto;
+    list-style: none;
+    font-size: 1.3em;
+}
+
+#navigation li:first-child {
+    display: block;
+}
+
+#navigation li {
+    display: none;
+}
+
+#navigation a {
+    display: block;
+    padding: 0.75rem;
+    text-align: left;
+    text-decoration: none;
+    color: white;
+    font-weight: 700;
+}
+
+#navigation a:hover,
+#navigation a.active:hover {
+    color: white;
+    background-color: #467599;
+}
+
+#navigation a.active {
+    background-color: rgba(0, 0, 0, .55);
+    color: white;
+    /* border-bottom: 5px solid black; */
+}
+
+#navigation.responsive li {
+    display: block;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    height: 100%;
+    background-color: #FDFFFC;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Roboto', sans-serif;
+    color: #1D3354;
+}
+
+h1 {
+    font-size: 3em;
+}
+
+h2 {
+    font-size: 2.5em;
+}
+
+h3 {
+    font-size: 2em;
+}
+
+h4 {
+    font-size: 1.5em;
+}
+
+h5 {
+    font-size: 1em;
+}
+
+h6 {
+    font-size: .7em;
+}
+
+p {
+    font-size: 1.2em;
+}
+
+li {
+    font-size: 1.2em;
+}
+
+main {
+    max-width: 425px;
+    margin: 0 auto;
+}
+
+main h1 {
+    text-align: center;
+}
+
+footer {
+    width: 100%;
+    /* margin: 0 auto; */
+    background-color: #D64045;
+    color: white;
+    height: 40px;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+footer p {
+    margin: 0;
+    padding-top: 10px;
+    padding-left: 15px;
+}
+
+button {
+    background-color: #1D3354;
+    color: white;
+    border-radius: 20px;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+}
+
+.underline {
+    border-bottom: #467599 solid 3px;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+/* Color Scheme Styles */
+.color-img {
+    max-width: 425px;
+}
+
+.color-examples h1 {
+    text-align: left;
+}
+
+.color-examples p {
+    background-color: #467599;
+    color: white;
+    padding: 15px;
+    max-width: 400px;
+    max-height: fit-content;
+}
+
+/* Typography styles */
+#typography-p {
+    text-align: center;
+}
+
+.typography-grid {
+    width: 80%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+}

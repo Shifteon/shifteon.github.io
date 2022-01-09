@@ -1,9 +1,0 @@
-@media only screen and (min-width: 768px) {
-    article {
-        width: 400px;
-    }
-
-    .barcode img {
-        width: 100%;
-    }
-}
