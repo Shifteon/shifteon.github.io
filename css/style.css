@@ -44,18 +44,25 @@ footer a:hover {
 
 header h1 {
     font-size: 32px;
-    padding-left: 95px;
+    /* padding-left: 95px; */
+    text-align: center;
+}
+
+header a {
+    display: block;
+    text-align: center;
+    color: white;
+    font-size: 1.2em;
 }
 
 main {
-    padding: 0 15px;
+    padding: 15px 15px;
 }
 
-main h2 {
+main h2, h3 {
     border-bottom: 1px  solid black;
 }
 
-.profile-img {
-    box-shadow: 0 0 15px black;
-    float: right;
+.content {
+    margin-left: 1.5em;
 }
