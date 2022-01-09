@@ -19,6 +19,14 @@
         padding: 0;
         padding-top: 15px;
     }
+
+    #projects.expanded {
+        max-height: 4000px;
+    }
+
+    #projects button {
+        left: 40%;
+    }
 }
 
 /* XS */

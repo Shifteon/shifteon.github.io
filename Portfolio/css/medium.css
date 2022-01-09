@@ -2,4 +2,12 @@
     #intro div:first-child {
         width: 100%;
     }
+
+    #projects.expanded {
+        max-height: 2600px;
+    }
+
+    #projects button {
+        left: 43.5%;
+    }
 }
