@@ -4,7 +4,7 @@ body {
     font-family: 'Playfair Display', serif;
 }
 
-h1, h2, h3, h4, h5, h6, .button, #navigation li a {
+h1, h2, h3, h4, h5, h6, .button, #navigation li a, .montserrat {
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -13,7 +13,7 @@ header#main-header {
     grid-template-columns: 1fr 1fr;
     align-items: center;
 
-    background-color: #7a2843;
+    background-color: #1C4E5F;
     color: white;
 
     padding: .75em;
@@ -58,16 +58,6 @@ nav {
     color: white;
 }
 
-#shopping-cart {
-    grid-row: 1/2;
-    grid-column: 3/4;
-    margin-right: .3em;
-}
-
-#shopping-cart a {
-    color: white;
-}
-
 #logo {
     justify-self: center;
     align-self: start;
@@ -80,35 +70,53 @@ nav {
     width: 100%;
 }
 
+#nav-phone {
+    display: none;
+}
+
 footer {
-    background-color: #EBEBEB;
+    background-color: #1C4E5F;
     padding: 1em;
 }
 
 #footer-content {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
+    color: white;
+}
+
+#footer-content .location a {
+    color: white;
+}
+
+#footer-logo {
+    text-align: center;
+}
+
+#footer-logo img {
+    width: 50%;
 }
 
 footer .contact p {
     margin: 0;
     font-family: 'Montserrat', sans-serif;
     padding: 0 .5em;
+    color: white
 }
 
 footer .contact a {
     display: block;
-    padding: .5em .5em;
-    color: black;
+    /* padding: .5em .5em; */
+    color: white;
     font-family: 'Montserrat', sans-serif;
 }
 
 footer .social {
-    /* display: grid;
-    grid-template-columns: 1fr 1fr; */
-    /* margin-top: 1em; */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 1em;
     width: fit-content;
-    justify-self: end;
+    justify-self: start;
     align-self: center;
 }
 
@@ -116,11 +124,29 @@ footer .social img {
     width: 3.75em;
 }
 
-footer .copyright {
-    color: black;
+#footer-extra {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+#footer-extra .copyright, #footer-extra .signature {
+    color: white;
     font-family: 'Montserrat', sans-serif;
     text-align: center;
     margin-bottom: 0;
+}
+
+#footer-extra .copyright {
+    grid-row: 2/3;
+}
+
+#footer-extra .signature a {
+    color: white;
+}
+
+#footer-extra .signature {
+    grid-row: 1/2;
+    justify-self: center;
 }
 
 .hero {
@@ -150,7 +176,7 @@ footer .copyright {
     align-self: end;
     justify-self: center;
 
-    background-color: #7a2843;
+    background-color: #838B4B;
     color: white;
     text-decoration: none;
     text-align: center;
@@ -170,7 +196,7 @@ footer .copyright {
 
 .button:hover {
     background-color: white;
-    color: #7a2843;
+    color: #1F333C;
 }
 
 .content div {
@@ -212,7 +238,7 @@ footer .copyright {
 
 .info-box {
     text-align: center;
-    background-color: #EBEBEB;
+    background-color: #1F333C;
     /* width: 90%; */
     margin: 1em auto;
     padding: .5em;
@@ -222,12 +248,14 @@ footer .copyright {
     margin-bottom: 0;
     margin-top: .3em;
     font-family: 'Playfair Display', serif;
+    color: white
 }
 
 .info-box p {
     /* text-align: left; */
     font-size: 1.2em;
     font-family: 'Montserrat', sans-serif;
+    color: white
     /* margin: .2em; */
 }
 
@@ -267,7 +295,7 @@ footer .copyright {
 
 /* Products styles */
 .products-header {
-    background-color: #CDC3BB;
+    background-color: #1F333C;
     text-align: center;
     padding: 1em;
     /* border-radius: 1.5em;
@@ -306,6 +334,7 @@ footer .copyright {
     grid-template-columns: 1fr 1fr 1fr;
     height: 1em;
     justify-content: center;
+    cursor: pointer;
 }
 
 .progress {
@@ -347,15 +376,15 @@ footer .copyright {
 
 #product-selection {
     width: 95%;
-    margin: 0 auto;
+    margin: 1em auto;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-gap: .5em;
+    grid-gap: 1em;
 }
 
 #product-selection img {
     width: 100%;
-    border: 1px solid lightgray;
+    border: 1px solid #1F333C;
 }
 
 #product-next {
@@ -363,7 +392,7 @@ footer .copyright {
     margin: 1em auto;
     width: 10em;
     display: block;
-    border: 1px solid #7a2843;
+    border: 1px solid #838B4B;
 }
 
 /* HIDE RADIO */

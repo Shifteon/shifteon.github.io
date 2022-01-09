@@ -1,9 +1,9 @@
 @media only screen and (min-width: 1024px) {
     header#main-header {
-        grid-template-columns: 90% 10%;
-        grid-template-rows: 65% 35%;
+        grid-template-columns: 2fr 2fr .5fr;
+        grid-template-rows: 1fr;
         padding: 0;
-        background-color: white;
+        background-color: #1C4E5F;
     }
 
     .ham {
@@ -11,82 +11,116 @@
     }
 
     nav {
-        grid-row: 2/3;
-        align-self: end;
-        background-color: white;
+        grid-row: 1/2;
+        grid-column: 2/3;
+        align-self: center;
+        height: fit-content;
+        border-right: 2px solid white;
+        /* background-color: white; */
     }
 
     #logo {
         grid-row: 1/2;
-        grid-column: 1/-1;
-        text-align: center;
-        background-color: #7a2843;
+        grid-column: 1/2;
+        text-align: start;
+        background-color: #1C4E5F;
         width: 100%;
     }
 
     #logo img {
-        width: 15%;
+        width: 35%;
+        margin: 0em 1em;
     }
 
     #navigation {
-        color: #7a2843;
         grid-template-columns: 1fr 1fr 1fr;
         text-align: center;
-        width: 50%;
+        margin: 0 10px;
     }
 
     #navigation li {
         display: block;
         padding: 0;
         font-size: 2em;
+        align-self: center;
     }
 
     #navigation li.active {
         border: none;
-        background-color: #7a2843;
+        color: #FFFFFF;
     }
 
     #navigation li.active a {
-        color: white;
-    }
-
-    #navigation li:hover {
-        background-color: #7a2843;
-        /* box-shadow: 3px 5px 3px lightgray; */
+        color: #C1C5A5;
     }
 
     #navigation li a:hover {
-        color: white;
+        color: #C1C5A5;
     }
 
     #navigation li a {
-        color: #7a2843;
+        color: white;
         width: 100%;
         height: 100%;
         display: block;
     }
 
-    #shopping-cart {
-        margin: 0;
-        grid-row: 2/3;
-        grid-column: 2/3;
-        background-color: white;
-        justify-self: center;
-        align-self: center;
-        /* width: 100%; */
-        /* display: block; */
+    #nav-phone {
+        margin: 0 10px;
+        display: block;
+        color: white;
     }
 
-    #shopping-cart a {
-        color: #7a2843;
-        display: block;
-        /* font-size: 2em; */
+    #nav-phone a {
+        color: #C1C5A5;
+        font-family: 'Montserrat', sans-serif;
+        text-decoration: none;
+        font-size: 1.25em;
     }
 
-    #shopping-cart a span {
-        /* font-size: 1.5em; */
-        display: block;
-        font-size: 2em;
+    footer #footer-content {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        justify-items: center;
+        align-items: start;
+    }
+
+    #footer-logo {
+        text-align: center;
+    }
+
+    #footer-logo img {
+        width: 60%;
+    }
+
+    #footer-content .contact a {
+        padding: 0;
+    }
+
+    #footer-content .contact {
+        justify-self: end;
+    }
+
+    #footer-content .social {
+        align-self: end;
+        justify-self: end;
+    }
+
+    #footer-extra {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    #footer-extra .copyright, #footer-extra .signature {
+        grid-column: 1/2;
+        grid-row: 1/2;
+        color: white;
+        font-family: 'Montserrat', sans-serif;
+        text-align: center;
+        margin-bottom: 0;
+    }
+
+    #footer-extra .signature {
+        justify-self: end;
     }
 
     .hero {
@@ -95,7 +129,7 @@
         grid-template-columns: 1fr 1fr;
     }
 
-    .hero picture {
+    .hero video {
         grid-row: 1/-1;
         grid-column: 1/-1;
     }
@@ -111,10 +145,10 @@
         text-align: center;
         /* background-color: rgba(0,0,0,.3); */
         color: white;
-        grid-row: 1/2;
-        grid-column: 2/3;
-        align-self: end;
-        justify-self: center;
+        grid-row: 2/3;
+        grid-column: 1/3;
+        align-self: center;
+        justify-self: Center;
     }
 
     .hero .content-box h2 {
@@ -123,7 +157,7 @@
 
     .hero .content-box .button {
         font-size: 1.5em;
-        padding: .5em 1em;
+        padding: .5em .75em;
     }
 
     .hero #small-btn {
@@ -197,7 +231,7 @@
     }
 
     #shop-now .button {
-        border: 2px solid #7a2843;
+        border: 2px solid #838B4B;
     }
 
     /* Order styles */
