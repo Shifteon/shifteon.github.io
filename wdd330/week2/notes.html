@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+      content="Week 2 for Benjamin Wyatt in WDD 330: Web Frontend Development at Brigham Young University - Idaho">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/prism.css">
+    <title>WDD 330 Week 2 Notes</title>
+  </head>
+
+  <body>
+    <div id="index-main">
+      <header>
+        <h1>Week 2</h1>
+        <a href="../index.html">Home</a>
+      </header>
+      <main>
+        <h2>Notes</h2>
+        <div class="content">
+          <h3>Data Structures</h3>
+          <h4>Arrays</h4>
+          <p>How to initialize an array at creation</p>
+          <code class="language-javascript">
+            const avengers = ['Captain America', 'Iron Man', 'Thor', 'Hulk'];
+          </code>
+          <p>JavaScript arrays can contain different types! This is very different from C++</p>
+          <p>Destructuring an array is really cool. This allows us to assign two values at the same time. For example:
+          </p>
+          <code class="language-javascript">
+            const [x,y] = [1,2]
+          </code>
+          <h4>Set</h4>
+          <p>A set is a data structure that does not allow duplicates.</p>
+          <code class="language-javascript">
+            const list = new Set(); // Create a set
+          </code>
+          <p>This works because all non-primitive values, such as arrays and objects, are considered unique values, even
+            if they contain the same values.</p>
+          <code class="language-javascript">
+            const arrays = new Set().add([1]).add([1]); // Set { [ 1 ], [ 1 ] }
+          </code>
+        </div>
+        <h2>Questions</h2>
+        <ul>
+          <li></li>
+        </ul>
+      </main>
+      <footer>
+        <p class="legal">&copy; <span id="copyrightyear"></span> | Benjamin P. Wyatt | Washington | <a
+            href="https://www.byui.edu/online" target="_blank">BYUI
+            Online Learning</a></p>
+        <p class="highlight">Last Updated: <span id="lastupdated"></span></p>
+      </footer>
+    </div>
+    <script src="../scripts/prism.js"></script>
+    <script src="../scripts/main.js"></script>
+  </body>
+
+</html>
