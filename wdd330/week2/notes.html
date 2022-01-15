@@ -44,10 +44,40 @@
           <code class="language-javascript">
             const arrays = new Set().add([1]).add([1]); // Set { [ 1 ], [ 1 ] }
           </code>
+          <h4>Functions</h4>
+          <pre>
+            <code class="language-javascript">
+// Normal function declaration
+function foo() {
+  console.log("hi");
+}
+
+// Assigning a function to a variable
+const foo = function() {
+  console.log("hi");
+}
+
+// Using the rest operator
+function foo(...args) {
+  for (arg of args) {
+    console.log(arg);
+  }
+}
+
+// Arrow function
+const foo = (x, y) => {
+  console.log("hi");
+}
+
+// Single parameter
+const foo = x => x * x; // The statement returns because it's the only statement
+            </code>
+          </pre>
+          <p>A callback function is helpful when sorting numbers. We can tell the sort function how to sort with a callback.</p>
         </div>
         <h2>Questions</h2>
         <ul>
-          <li></li>
+          <li>What are some good real world uses for map, filter, and reduce?</li>
         </ul>
       </main>
       <footer>
