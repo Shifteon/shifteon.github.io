@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+      content="Week 3 for Benjamin Wyatt in WDD 330: Web Frontend Development at Brigham Young University - Idaho">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/prism.css">
+    <title>WDD 330 Week 3 Notes</title>
+  </head>
+
+  <body>
+    <div id="index-main">
+      <header>
+        <h1>Week 3</h1>
+        <a href="../index.html">Home</a>
+      </header>
+      <main>
+        <h2>Notes</h2>
+        <div class="content">
+          <h3>"this" Keyword</h3>
+          <p>The "this" keyword refers to the current object</p>
+          <pre>
+            <code class="language-javascript">
+let dog = {
+  name = "Timmy",
+  printName() {
+    // "this" refers to this object
+    console.log(this.name);
+  }
+};
+            </code>
+          </pre>
+          <p>"this" can be used in any function. Not just in methods. The value of this is decided at run time. "this"
+            is free in Javascript where in other languages it is bound. This can lets us use the same function for
+            different objects, but it can make it easier to make mistakes.</p>
+          <p>Arrow functions have no "this"</p>
+          <h3>Document Object Model</h3>
+          <p>The DOM represents an HTML document as a network of connected nodes. The HTML element is the root node.
+          </p>
+          <p>We can use any language to access and manipulate the DOM, but JavaScript is definitely the most popular.
+          </p>
+          <p>Node lists aren't arrays, but you can loop through them and access elements through index notation. You can
+            also convert them to an array.</p>
+          <pre>
+            <code class="language-javascript">
+// convert a node list to an array
+const imageArray = Array.from(document.images);
+
+// using the spread operator
+const imageArray = [...document.images];
+            </code>
+          </pre>
+          <p>Be careful of empty text nodes when selecting child nodes.</p>
+          <h3>Events</h3>
+          <p>Event listners listen for an event and the call a callback function whenever that event happens.</p>
+          <p>When the callback function is called, an event object is passed in which contains information about the
+            event.</p>
+          <p>Event propagation is the order that the events fire on each element. Clicking on an element clicks on all
+            the elements it's nested inside of. The event either bubbles, it starts on the element that was clicked on
+            and propogates until it reaches the root node, or it captures, it starts at the root and propogates until it
+            reaches the element that was clicked on.</p>
+          <p>If you have two events, one on a parent and another on a child, bubbling would fire the one on the child
+            first and then the one on the parent. Capturing would fire the parents first. Propogation can also be
+            stopped by using event.stopPropagation()</p>
+          <pre>
+            <code class="language-javascript">
+liElement.addEventListener('click', (event) => {
+console.log('clicked on li');
+// stop the event from propogating
+event.stopPropagation(); }, false);
+            </code>
+          </pre>
+        </div>
+        <h2>Questions</h2>
+        <ul>
+          <li>Is there any reason to use selectors like getElementById instead of querySelector?</li>
+          <li>What are some examples of when bubbling would be better than capturing and vice versa?</li>
+        </ul>
+      </main>
+      <footer>
+        <p class="legal">&copy; <span id="copyrightyear"></span> | Benjamin P. Wyatt | Washington | <a
+            href="https://www.byui.edu/online" target="_blank">BYUI
+            Online Learning</a></p>
+        <p class="highlight">Last Updated: <span id="lastupdated"></span></p>
+      </footer>
+    </div>
+    <script src="../scripts/prism.js"></script>
+    <script src="../scripts/main.js"></script>
+  </body>
+
+</html>
