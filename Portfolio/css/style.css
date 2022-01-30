@@ -145,13 +145,17 @@ footer p {
     transition: max-height 0.75s ease-in;
 }
 
-#projects button {
+#projects button#expand {
     position: absolute;
     bottom: 1.5em;
     left: 47%;
     z-index: 1000;
+}
+
+#projects button, .button {
     background-color: #293241;
-    border: none;
+    /* To prevent some buttons from resizing when a border is added */
+    border: 1px solid transparent;
     border-radius: 1em;
     padding: .75em;
     font-size: 1em;
@@ -160,9 +164,22 @@ footer p {
     transition: 300ms;
 }
 
-#projects button:hover {
+#projects button:hover, .button:hover {
     background-color: white;
     color: #293241;
+}
+
+#projects a.button {
+    display: block;
+    grid-row: 3/4;
+    text-align: center;
+    width: 60%;
+    justify-self: center;
+    text-decoration: none;
+}
+
+#projects a.button:hover {
+    border: 1px solid #293241;
 }
 
 #project-header {
@@ -190,12 +207,13 @@ footer p {
     width: 80%;
     margin: 0 auto;
     padding-top: 3%;
+    padding-bottom: 2em;
     display: grid;
     grid-template-columns: repeat(3, auto);
     justify-items: center;
 }
 
-.logo-img {
+.skill-img {
     /* height: 5%;
     width: 5%; */
     padding-right: 3%;
@@ -220,7 +238,7 @@ footer p {
     margin-bottom: 15px;
     transition: 500ms;
     min-height: 390px;
-    max-height: 390px;
+    max-height: fit-content;
 }
 
 .card:hover {
@@ -232,25 +250,25 @@ footer p {
     padding: 0;
 }
 
-.card-a {
-    display: grid;
-    grid-template-rows: 1fr;
-    text-decoration: none;
-    color: black;
-}
-
-.card-a:hover {
-    text-decoration: none;
-}
-
 .card img {
     max-width: 100%;
     height: 225px;
     margin: 0 auto;
+    display: block;
 }
 
 .card-body {
     padding: 0px 15px 15px 15px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.card-body h3, .card-body p {
+    grid-column: 1/-1;
+}
+
+.card-body h3 {
+    margin-bottom: 0;
 }
 
 /* end card styles */

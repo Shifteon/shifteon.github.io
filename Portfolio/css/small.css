@@ -24,7 +24,7 @@
         max-height: 4000px;
     }
 
-    #projects button {
+    #projects button#expand {
         left: 40%;
     }
 }
