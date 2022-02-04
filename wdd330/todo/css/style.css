@@ -1,0 +1,83 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+
+    width: 30%;
+    margin: 0 auto;
+
+    background-color: #202124;
+    color: white;
+}
+
+button {
+    background-color: #73E2A7;
+    border: none;
+    padding: .5em;
+    cursor: pointer;
+}
+
+#task-list {
+    text-align: center;
+    padding: .5em;
+    border-radius: .5em;
+    border: 2px solid #9999A1;
+    overflow: hidden;
+}
+
+#task-list li:first-of-type {
+    border: none;
+}
+
+#task-list li {
+    display: grid;
+    grid-template-columns: 10% 80% 10%;
+    align-items: center;
+
+    border-top: 1px solid #9999A1;
+    border-bottom: none;
+    padding: .25em;
+}
+
+#task-list li p, #task-list li input {
+    justify-self: left;
+}
+
+#task-list li input {
+    transform: scale(1.5);
+}
+
+#task-list #tasks-footer {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    padding-top: 1em;
+}
+
+#task-list #tasks-footer input {
+    display: none;
+}
+
+#task-list #tasks-footer label {
+    border: 1px solid #9999A1;
+    cursor: pointer;
+    margin: 0 .25em;
+}
+
+#task-list #tasks-footer label.active {
+    background-color: #73E2A7;
+}
+
+form {
+    text-align: center;
+}
+
+form input {
+    width: 80%;
+    /* background-color: #9999A1; */
+    border-radius: .5em;
+    padding: .5em;
+}
+
+form button {
+    width: 3em;
+    font-weight: bold;
+    border-radius: .5em;
+}
