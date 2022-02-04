@@ -42,6 +42,10 @@ button {
     justify-self: left;
 }
 
+#task-list li button {
+    background-color: #DF2935;
+}
+
 #task-list li input {
     transform: scale(1.5);
 }

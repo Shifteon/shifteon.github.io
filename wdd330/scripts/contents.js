@@ -13,6 +13,10 @@ const links = [{
   {
     label: "Week 4",
     url: "week4/index.html"
+  },
+  {
+    label: "Todo",
+    url: "todo/index.html"
   }
 ];
 let list = document.querySelector("ol");
