@@ -1,8 +1,11 @@
+/* https://coolors.co/202124-9999a1-73e2a7-df2935 */
+
 body {
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
 
     width: 30%;
+    min-width: 350px;
     margin: 0 auto;
 
     background-color: #202124;
