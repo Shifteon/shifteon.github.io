@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description"
+            content="Week 5 for Benjamin Wyatt in WDD 330: Web Frontend Development at Brigham Young University - Idaho">
+        <link rel="stylesheet" href="../css/normalize.css">
+        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="../css/prism.css">
+        <title>WDD 330 Week 5 Notes</title>
+    </head>
+
+    <body>
+        <div id="index-main">
+            <header>
+                <h1>Week 5</h1>
+                <a href="../index.html">Home</a>
+            </header>
+            <main>
+                <h2>Notes</h2>
+                <div class="content">
+                    <h3>Exceptions</h3>
+                    <p>Exceptions return a value that let us handle an error. These are the kind of errors that will
+                        break the program. excpetions also produce a stack trace to help us find the source of the
+                        error.</p>
+                    <h3>Strict Mode</h3>
+                    <code class="language-javascript">'use strict';</code>
+                    <p>Strict mode makes JavaScript more strict. It throws more excpetions and keeps you from writing
+                        sloppy code. It is generally a smart idea to use strict mode so you write better code. To use
+                        strict mode just add 'use strict'; to the top of your JavaScript file, or at the top of a
+                        function if you want it to only apply to that function.</p>
+                    <h3>Feature Detection</h3>
+                    <p>Feature detection allows us to check if the browser supports a method before we use it.</p>
+                    <pre>
+                        <code class="language-javascript">
+// make sure a feature exists before we use it
+if (window.addEventListener) {
+    window.addEventListener("load", function);
+}
+                        </code>
+                    </pre>
+                    <h3>Throw, Try, Catch</h3>
+                    <p>We can throw our own exceptions using throw. Try let's us run a block of code, and if an
+                        exception is thrown we can catch the exception in the catch block to handle it gracefully.</p>
+                    <pre>
+                        <code class="language-javascript">
+// throwing an error
+throw new Error('Something went wrong!');
+
+// try catch
+function imaginarySquareRoot(number) {
+    'use strict';
+    try {
+        return String(squareRoot(number));
+    } catch(error) {
+        return squareRoot(-number)+'i';
+    }
+}                            
+                        </code>
+                    </pre>
+                </div>
+                <h2>Questions</h2>
+                <ul>
+                    <li>Is test-driven development standard in industry?</li>
+                </ul>
+            </main>
+            <footer>
+                <p class="legal">&copy; <span id="copyrightyear"></span> | Benjamin P. Wyatt | Washington | <a
+                        href="https://www.byui.edu/online" target="_blank">BYUI
+                        Online Learning</a></p>
+                <p class="highlight">Last Updated: <span id="lastupdated"></span></p>
+            </footer>
+        </div>
+        <script src="../scripts/prism.js"></script>
+        <script src="../scripts/main.js"></script>
+    </body>
+
+</html>
