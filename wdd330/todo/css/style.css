@@ -45,6 +45,11 @@ button {
     justify-self: left;
 }
 
+#task-list li.completed p {
+    text-decoration: line-through;
+    
+}
+
 #task-list li button {
     background-color: #DF2935;
 }
@@ -59,7 +64,11 @@ button {
 }
 
 #task-list #tasks-footer input {
-    display: none;
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
 }
 
 #task-list #tasks-footer label {
