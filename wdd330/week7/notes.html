@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description"
+            content="Week 7 for Benjamin Wyatt in WDD 330: Web Frontend Development at Brigham Young University - Idaho">
+        <link rel="stylesheet" href="../css/normalize.css">
+        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="../css/prism.css">
+        <title>WDD 330 Week 7 Notes</title>
+    </head>
+
+    <body>
+        <div id="index-main">
+            <header>
+                <h1>Week 7</h1>
+                <a href="../index.html">Home</a>
+            </header>
+            <main>
+                <h2>Notes</h2>
+                <div class="content">
+                    <h3>Further Functions</h3>
+                    <p>The call method lets us set the "this" in a function. If the function has any parameters, they
+                        must be provided after the first parameter, which is for "this".</p>
+                    <pre>
+                        <code class="language-javascript">
+function sayHello(){
+    return `Hello, my name is ${ this.name }`;
+}
+
+const clark = { name: 'Clark' };
+const bruce = { name: 'Bruce' };
+
+sayHello.call(clark);
+<< 'Hello, my name is Clarke'
+
+sayHello.call(bruce);
+<< 'Hello, my name is Bruce'
+
+// using call without "this"
+square.call(null, 4)
+                        </code>
+                    </pre>
+                    <p>Functions also have a cache where they can store values. This is helpful if it takes a lot of
+                        computational power to get a result from a function.</p>
+                    <code class="language-javascript">square.cache</code>
+                    <p>If you want to code in strict mode, but you are not sure if all the code was written in strict
+                        mode, then you can write all your code in IIFE.</p>
+                    <pre>
+                        <code class="language-javascript">
+(function() {
+    'use strict';
+
+// All your code would go inside this function
+
+})();
+                        </code>
+                    </pre>
+                    <p>Functions can define, and redefine themselves.</p>
+                    <pre>
+                        <code class="language-javascript">
+function party() {
+    console.log('Wow this is amazing!');
+    party = function(){
+        console.log('Been there, got the T-Shirt');
+    }
+}
+                        </code>
+                    </pre>
+
+                    <h3>Ajax</h3>
+                    <p>Ajax stands for Asynchronous Javascript and XML. The Fetch API is the current standard for Ajax
+                        requests. It uses promises and has a response object.</p>
+                    <pre>
+                        <code class="language-javascript">
+// fetch with response
+fetch(url)
+.then( response => response.json() ); // transforms the JSON data into a JavaScript object
+.then( data => console.log(Object.entries(data)) )
+.catch( error => console.log('There was an error: ', error))
+                        </code>
+                    </pre>
+                    <p>We can use Ajax to asynchronously get data and update our webpage without reloading.</p>
+                </div>
+                <h2>Questions</h2>
+                <ul>
+                    <li>What are some places functional programming would be better than object-oriented programming?</li>
+                </ul>
+            </main>
+            <footer>
+                <p class="legal">&copy; <span id="copyrightyear"></span> | Benjamin P. Wyatt | Washington | <a
+                        href="https://www.byui.edu/online" target="_blank">BYUI
+                        Online Learning</a></p>
+                <p class="highlight">Last Updated: <span id="lastupdated"></span></p>
+            </footer>
+        </div>
+        <script src="../scripts/prism.js"></script>
+        <script src="../scripts/main.js"></script>
+    </body>
+
+</html>
