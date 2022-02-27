@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description"
+            content="Week 8 for Benjamin Wyatt in WDD 330: Web Frontend Development at Brigham Young University - Idaho">
+        <link rel="stylesheet" href="../css/normalize.css">
+        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="../css/prism.css">
+        <title>WDD 330 Week 8 Notes</title>
+    </head>
+
+    <body>
+        <div id="index-main">
+            <header>
+                <h1>Week 8</h1>
+                <a href="../index.html">Home</a>
+            </header>
+            <main>
+                <h2>Notes</h2>
+                <div class="content">
+                    <h3>Transforms</h3>
+                    <p>Transforms allow us to translate, rotate, scale, and/or scale elements on the page.</p>
+                    <p>Scale grows or shrinks an element based on x and y values. The elements center will always stay
+                        the same.</p>
+                    <p>Rotate rotates an element on its point of origin by a specified angle.</p>
+                    <p>Skew skews an element on the x and y axis.</p>
+                    <p>The order of transforms matters. You may end up changing the point of origin and the a transform
+                        function might not work how you expect it.</p>
+                    <pre>
+                        <code class="language-css">
+/* a translate function
+   it allows us to move elements around
+   based on their original position*/
+transform: translate(45px, -45px);
+
+/* the scale function. */
+transform: scale(1.5, 0.25);
+
+/* the rotate function */
+transform: rotate(10deg);
+
+/* the skew function */
+transform: skew(15deg, 4deg);
+
+/* you can change the orgin of the transform */
+transform-origin: 10% 10%;
+                        </code>
+                    </pre>
+                    <h3>Transitions</h3>
+                    <p>Anything with a valid midpoint can be transitioned. Visibilty can also be transitioned.</p>
+                    <pre>
+                        <code class="language-css">
+/* all of the transition properties */
+.ad-ad2 h1 span {
+    transition-property: transform; 
+    transition-duration: 0.2s;  
+    transition-timing-function: ease-out;
+    transition-delay: 50ms;
+
+    /* the shorthand */
+    transition: transform 0.2s ease-out 50ms;
+
+    /* transitioning on multiple elements */
+    transition-property: transform, color; 
+    transition-duration: 0.2s, 0.1s;  
+    transition-timing-function: ease-out, linear;
+    transition-delay: 50ms;
+
+    /* with the shorthand */
+    transition: transform 0.2s ease-out 50ms, color 0.1s linear 50ms;
+}
+                        </code>
+                    </pre>
+                    <h3>Animations</h3>
+                    <p>Animations give us a lot more control over what happens than transitions by allowing us to set
+                        keyframes.</p>
+                    <pre>
+                        <code class="language-css">
+/* keyframe rule for an animation */
+@keyframes myAnimation { 
+    /* put animation keyframes here */
+}           
+
+/* some filled out rules */
+@keyframes moveRight { 
+    /* from and to are 0% and 100% respectively */
+    from {
+    transform: translateX(-50%);
+    }
+    to {
+    transform: translateX(50%);
+    }
+}
+
+@keyframes appearDisappear { 
+    0%, 100% {
+    opacity: 0;
+    }
+    20%, 80% {
+    opacity: 1;
+    }
+}
+
+@keyframes bgMove {
+    100% {
+    background-position: 120% 0;
+    }
+}
+
+/* applying an animation */
+.verbose {
+    animation-name: appearDisappear; 
+    animation-duration: 300ms; 
+    animation-timing-function: ease-in;
+    animation-iteration-count: 1;
+    animation-direction: alternate;
+    animation-delay: 5s;
+    animation-fill-mode: backwards;
+    animation-play-state: running;
+}
+
+/* shorthand */
+.concise {
+    animation: 300ms ease-in alternate 5s backwards appearDisappear;
+}
+                        </code>
+                    </pre>
+                    <h3>Canvas</h3>
+                    <p>Canvas lets us draw whatever we want with javascript.</p>
+                    <p>Remember to give a canvas a border so it can be seen as it has no default styling.</p>
+                    <pre>
+                        <code class="language-javascript">
+// draw a rectangle to a canvas
+var canvas = document.getElementById("myCanvas"); 
+var context = canvas.getContext("2d"); 
+context.strokeStyle = "red";
+context.fillStyle = "rgba(0, 0, 255, 0.5)";
+context.fillRect(10, 10, 100, 100);   
+context.strokeRect(10, 10, 100, 100);
+                        </code>
+                    </pre>
+                    <h3>SVG</h3>
+                    <p>SVG is similar to canvas in many ways. SVG is scalable vector graphics. This lets us resize the
+                        image without losing any of the quality. Creating our own complex image can be very
+                        intimidating, so using tools like photo editors and javascript libraries is a great idea.</p>
+                </div>
+                <h2>Questions</h2>
+                <ul>
+                    <li>Is there any reason we wouldn't style a canvas? Would we ever want it to be more hidden?</li>
+                </ul>
+            </main>
+            <footer>
+                <p class="legal">&copy; <span id="copyrightyear"></span> | Benjamin P. Wyatt | Washington | <a
+                        href="https://www.byui.edu/online" target="_blank">BYUI
+                        Online Learning</a></p>
+                <p class="highlight">Last Updated: <span id="lastupdated"></span></p>
+            </footer>
+        </div>
+        <script src="../scripts/prism.js"></script>
+        <script src="../scripts/main.js"></script>
+    </body>
+
+</html>
