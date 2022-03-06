@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description"
+            content="Week 9 for Benjamin Wyatt in WDD 330: Web Frontend Development at Brigham Young University - Idaho">
+        <link rel="stylesheet" href="../css/normalize.css">
+        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="../css/prism.css">
+        <title>WDD 330 Week 9 Notes</title>
+    </head>
+
+    <body>
+        <div id="index-main">
+            <header>
+                <h1>Week 9</h1>
+                <a href="../index.html">Home</a>
+            </header>
+            <main>
+                <h2>Notes</h2>
+                <div class="content">
+                    <h3>The Window Object</h3>
+                    <p>JavaScript has a global object. All global variables and functions are part of this object. In browsers, this is the window object.</p>
+                    <p>These are all part of the window/global object</p>
+                    <ul>
+                        <li>parseInt()</li>
+                        <li>isNaN()</li>
+                        <li>Dialogs: alert(), confirm(), prompt(). (These are all part of the window object)</li>
+                    </ul>
+                    <p>You can use the window object to figure out what browser your code is being run in. Be careful relying on this object as it can be spoofed.</p>
+                    <code class="language-javascript">window.navigator.userAgent</code>
+                    <h3>Cookies</h3>
+                    <p>Cookies let us store information on a users computer in order to keep state. A cookie is a text file that contains name/value pairs that are separated by semicolons.</p>
+                    <pre>
+                        <code class="language-javascript">
+// set a cookie
+document.cookie = 'hero=true';
+
+// this appends to the cookie object adding another cookie
+document.cookie = 'city=Metropolis';
+
+// update the value of a cookie
+document.cookie = 'city=Gotham';
+
+// read cookies
+const cookies = document.cookie.split("; ");
+for (crumb of cookies){
+    const [key,value] = crumb.split("=");
+    console.log(`The value of ${key} is ${value}`);
+}
+                        </code>
+                    </pre>
+
+                    <h3>HTML5 Web Storage</h3>
+                    <p>This API provides a key-value storage on the users computer. This is localstorage. One cool thing is that it doesn't really have a storage size limit. Whenever something is saved to localstorage, a storage event is fired.</p>
+                    <code class="language-javascript">localStorage.name = 'Heisenberg'; // another way to access values</code>
+                    <h3>Web Sockets</h3>
+                    <pre>
+                        <code class="language-javascript">
+/*
+Using a websocket for a simple messaging program.
+Websockets keep a port open, so a stream of repsonses 
+can come in without a response being sent.
+*/
+
+const URL = 'wss://echo.websocket.org/';
+const outputDiv = document.getElementById('output');
+const form = document.forms[0];
+const connection = new WebSocket(URL);
+
+connection.addEventListener('open', () => {
+    output('CONNECTED');
+}, false);
+
+function output(message) {
+    const para = document.createElement('p');
+    para.innerHTML = message;
+    outputDiv.appendChild(para);
+}
+
+form.addEventListener('submit', message, false);
+
+function message(event) {
+    event.preventDefault();
+    const text = form.message.value;
+    output(`SENT: ${text}`);
+    connection.send(text);
+}
+
+connection.addEventListener('message', (event) => {
+    output(`RESPONSE: ${event.data}`);
+}, false);
+                        </code>
+                    </pre>
+
+                </div>
+                <h2>Questions</h2>
+                <ul>
+                    <li>Is it good practice to use the storage event to update a webpage if a change has been made?</li>
+                    <li>Web workers seem really cool. Are they widely used?</li>
+                </ul>
+            </main>
+            <footer>
+                <p class="legal">&copy; <span id="copyrightyear"></span> | Benjamin P. Wyatt | Washington | <a
+                        href="https://www.byui.edu/online" target="_blank">BYUI
+                        Online Learning</a></p>
+                <p class="highlight">Last Updated: <span id="lastupdated"></span></p>
+            </footer>
+        </div>
+        <script src="../scripts/prism.js"></script>
+        <script src="../scripts/main.js"></script>
+    </body>
+
+</html>
