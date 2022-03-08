@@ -1,7 +1,10 @@
 import { readFromLS, writeToLS } from "./ls.js";
 
-async function getPokemon() {
-    const url = "https://pokeapi.co/api/v2/pokedex/hoenn/";
+/*
+Fetch Pokemon data from the PokeAPI
+*/
+async function getPokemon(region) {
+    const url = `https://pokeapi.co/api/v2/pokedex/${region}/`;
 
     const response = await fetch(url);
 
@@ -12,16 +15,20 @@ async function getPokemon() {
     }
 }
 
-function getPokeInfo() {
-    let pokeInfo = readFromLS("pokeInfo");
+/* 
+Read Pokemon info from local storage or 
+fetch it from the PokeAPI if it doesn't exist 
+*/
+function getPokeInfo(region="hoenn") {
+    let pokeInfo = readFromLS(region);
     if (pokeInfo != null) {
         return pokeInfo;
     } else {
-        getPokemon()
+        getPokemon(region)
         .then(data => {
-            writeToLS("pokeInfo", data);
+            writeToLS(region, data);
         });
-        return readFromLS("pokeInfo");
+        return readFromLS(region);
     }
 }
 

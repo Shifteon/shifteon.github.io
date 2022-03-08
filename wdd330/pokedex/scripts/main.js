@@ -12,8 +12,6 @@ function buildDex(data) {
         li.innerHTML = `
         <h2>Name: ${pokemon.pokemon_species.name}</h2>`;
 
-        console.log()
-
         parent.appendChild(li);
     }
 }
