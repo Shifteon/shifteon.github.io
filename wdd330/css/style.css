@@ -83,3 +83,11 @@ pre {
     border: 2px solid #6BA368;
     border-radius: .5em;
 }
+
+pre.no-overflow {
+    max-height: 400px;
+}
+
+.no-overflow {
+    overflow: scroll;
+}
