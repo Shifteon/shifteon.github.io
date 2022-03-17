@@ -3,7 +3,7 @@ import { readFromLS, writeToLS } from "./ls.js";
 /*
 Fetch Pokemon data from the PokeAPI
 */
-async function getPokemon(region) {
+async function fetchPokemon(region) {
     const url = `https://pokeapi.co/api/v2/pokedex/${region}/`;
 
     const response = await fetch(url);
@@ -15,17 +15,39 @@ async function getPokemon(region) {
     }
 }
 
-// TODO: Fix this
-async function getPokemonImage(url) {
-    fetch(url)
-    .then(response => response.json())
-    .then(data => {
-        fetch(data.varieties[0].pokemon.url)
-         .then(response => response.json())
-         .then(data => {
-            return data;
-         });
-    });
+/*
+Fetch info on a single pokemon
+*/
+async function fetchSinglePokemon(url) {
+    const response = await fetch(url);
+    const data = await response.json();
+
+
+    const pokemon = await fetch(data.varieties[0].pokemon.url);
+    const pokemonData = await pokemon.json();
+    // console.log(pokemonData);
+    if (pokemon.status == 200) {
+        return pokemonData;
+    } else {
+        throw new Error("Error retrieving single pokemon: " + response.status);
+    }
+}
+
+/*
+Get info on a single pokemon
+Can't use this function because pokemon data is too big
+*/
+async function getSinglePokemon(url) {
+    let info = readFromLS(url);
+    if (info != null) {
+        return info;
+    } else {
+        const data = await fetchSinglePokemon(url);
+        // console.log(data);
+        writeToLS(url, data);
+        
+        return readFromLS(url);
+    }
 }
 
 /* 
@@ -37,7 +59,7 @@ function getPokeInfo(region="hoenn") {
     if (pokeInfo != null) {
         return pokeInfo;
     } else {
-        getPokemon(region)
+        fetchPokemon(region)
         .then(data => {
             writeToLS(region, data);
         });
@@ -45,21 +67,29 @@ function getPokeInfo(region="hoenn") {
     }
 }
 
-function getImage(url) {
+/*
+Get the image url for a pokemon
+*/
+async function getImage(url) {
     let image = readFromLS(url);
     if (image != null) {
         return image.image;
     } else {
-        getPokemonImage(url)
-            .then(data => {
-                console.log(data);
-                const img = {
-                    image: data.sprites.front_default
-                };
-                writeToLS(url, img);
-                return data.sprites.front_default;
-            });
+        const data = await fetchSinglePokemon(url);
+        // console.log(data);
+        const img = {
+                image: data.sprites.front_default
+        };
+        writeToLS(img);
+        return data.sprites.front_default;
     }
 }
 
-export { getPokeInfo, getImage };
+/*
+Check a pokemon as obtained
+*/
+function obtainPokemon(url) {
+
+}
+
+export { getPokeInfo, getImage, obtainPokemon };
