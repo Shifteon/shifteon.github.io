@@ -33,13 +33,27 @@ nav #navigation {
     align-items: center;
 }
 
-nav #navigation li:hover {
+nav #navigation li {
+    width: 100%;
+    text-align: center;
+}
+
+nav #navigation li:hover, nav #navigation li select:hover {
     background-color: #96BE8C;
 }
 
 nav #navigation li a {
     text-decoration: none;
     color: white;
+}
+
+nav #navigation li select {
+    width: 100%;
+    font-size: 1.25em;
+    border: none;
+    background-color: #629460;
+    color: white;
+    padding: .25em;
 }
 
 #pokedex-grid {
