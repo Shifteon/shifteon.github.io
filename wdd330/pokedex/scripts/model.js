@@ -22,7 +22,7 @@ async function fetchSinglePokemon(url) {
     const response = await fetch(url);
     const data = await response.json();
 
-
+    // Get the more specific data
     const pokemon = await fetch(data.varieties[0].pokemon.url);
     const pokemonData = await pokemon.json();
     // console.log(pokemonData);
@@ -54,15 +54,13 @@ async function getSinglePokemon(url) {
 Read Pokemon info from local storage or 
 fetch it from the PokeAPI if it doesn't exist 
 */
-function getPokeInfo(region="hoenn") {
+async function getPokeInfo(region="hoenn") {
     let pokeInfo = readFromLS(region);
     if (pokeInfo != null) {
         return pokeInfo;
     } else {
-        fetchPokemon(region)
-        .then(data => {
-            writeToLS(region, data);
-        });
+        const data = await fetchPokemon(region);
+        writeToLS(region, data);
         return readFromLS(region);
     }
 }
@@ -76,11 +74,17 @@ async function getImage(url) {
         return image.image;
     } else {
         const data = await fetchSinglePokemon(url);
-        // console.log(data);
-        const img = {
+        
+        const pokemon = readFromLS(url);
+        if (pokemon != null) {
+            pokemon.image = data.sprites.front_default;
+            writeToLS(url, pokemon);
+        } else {
+            const img = {
                 image: data.sprites.front_default
-        };
-        writeToLS(img);
+            };
+            writeToLS(url, img);
+        }
         return data.sprites.front_default;
     }
 }
@@ -89,7 +93,44 @@ async function getImage(url) {
 Check a pokemon as obtained
 */
 function obtainPokemon(url) {
-
+    const data = readFromLS(url);
+    if (data != null) {
+        data.obtained = true;
+        writeToLS(url, data);
+    } else {
+        const pokemon = {
+            obtained: true
+        };
+        writeToLS(url, pokemon);
+    }
 }
 
-export { getPokeInfo, getImage, obtainPokemon };
+function unobtainPokemon(url) {
+    const data = readFromLS(url);
+    if (data != null) {
+        data.obtained = false;
+        writeToLS(url, data);
+    } else {
+        const pokemon = {
+            obtained: false
+        };
+        writeToLS(url, pokemon);
+    }
+}
+
+/*
+Check a pokemon as obtained
+*/
+function isObtained(url) {
+    const data = readFromLS(url);
+    if (data != null) {
+        if (data.obtained) {
+            return data.obtained;
+        }
+        return false;
+    }
+
+    return false;
+}
+
+export { getPokeInfo, getImage, obtainPokemon, isObtained, unobtainPokemon };

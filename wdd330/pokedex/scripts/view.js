@@ -4,7 +4,7 @@ Features I need:
  - Build a detail view 
 */
 
-import { getImage } from "./model.js";
+import { getImage, isObtained } from "./model.js";
 
 
 /*
@@ -13,10 +13,13 @@ Build the pokedex grid
 function buildGrid(pokemonData) {
     console.log(pokemonData);
     const grid = document.querySelector('#pokedex-grid');
+    grid.innerHTML = '';
     for (const pokemon of pokemonData) {
+        const url = pokemon.pokemon_species.url;
+
         let gridItem = document.createElement('div');
         gridItem.classList.add('grid-item');
-        gridItem.setAttribute('data-url', pokemon.pokemon_species.url);
+        gridItem.setAttribute('data-url', url);
 
         let img = document.createElement('img');
         let content = document.createElement('h2');
@@ -25,14 +28,17 @@ function buildGrid(pokemonData) {
         // temp image
         img.src = "images/pokeball.png";
         
-        getImage(pokemon.pokemon_species.url).then(data => {
+        getImage(url).then(data => {
             img.src = data;
         })
 
         content.innerText = `#${pokemon.entry_number} ${pokemon.pokemon_species.name}`;
 
         checkBox.type = "checkbox";
-        checkBox.setAttribute('data-url', pokemon.pokemon_species.url);
+        checkBox.setAttribute('data-url', url);
+        if (isObtained(url)) {
+            checkBox.checked = true;
+        }
 
         gridItem.appendChild(img);
         gridItem.appendChild(content);

@@ -16,42 +16,53 @@ Features I need:
   kalos-costal
   kalos-mountain
   Original Alola
-  Galar
+  galar
 */
 
-import { getPokeInfo } from "./model.js";
+import { getPokeInfo, obtainPokemon, isObtained, unobtainPokemon } from "./model.js";
 import { buildGrid } from "./view.js";
 
 class Pokedex
 {
     constructor(region = "hoenn") {
         this.region = region;
-        this.info = getPokeInfo(this.region);
     }
 
     buildDex = () => {
-        const pokemonData = this.info.pokemon_entries;
-        buildGrid(pokemonData);
+        getPokeInfo(this.region)
+        .then(data => {
+            this.info = data;
+            const pokemonData = this.info.pokemon_entries;
+            buildGrid(pokemonData);
 
-        // add an event listener to each pokemon
-        const pokemon = Array.from(document.querySelector('#pokedex-grid').children);
-        pokemon.forEach(mon => {
-            mon.addEventListener('click', e => {
-                // alert(e.currentTarget.dataset.url);
-                return;
+            // add an event listener to each pokemon
+            const pokemon = Array.from(document.querySelector('#pokedex-grid').children);
+            pokemon.forEach(mon => {
+                mon.addEventListener('click', e => {
+                    // alert(e.currentTarget.dataset.url);
+                    return;
+                });
             });
-        });
-        const checkBoxes = document.querySelectorAll('.grid-item input');
-        checkBoxes.forEach(box => {
-            box.addEventListener('click', e => {
-                this.check(e.currentTarget.dataset.url);
-                e.stopPropagation();
+            const checkBoxes = document.querySelectorAll('.grid-item input');
+            checkBoxes.forEach(box => {
+                box.addEventListener('click', e => {
+                    if (isObtained(e.currentTarget.dataset.url)) {
+                        this.unCheck(e.currentTarget.dataset.url);
+                    } else {
+                        this.check(e.currentTarget.dataset.url);
+                    }
+                    e.stopPropagation();
+                });
             });
         });
     };
 
     check = url => {
-        
+        obtainPokemon(url);
+    };
+
+    unCheck = url => {
+        unobtainPokemon(url);
     };
 
 }

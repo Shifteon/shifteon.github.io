@@ -37,6 +37,10 @@ const links = [{
   {
     label: "Week 10",
     url: "week10/index.html"
+  },
+  {
+    label: "Pokedex",
+    url: "pokedex/index.html"
   }
 ];
 let list = document.querySelector("ol");
