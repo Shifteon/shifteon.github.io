@@ -19,13 +19,24 @@ Features I need:
   galar
 */
 
+import { readFromLS, writeToLS } from "./ls.js";
 import { getPokeInfo, obtainPokemon, isObtained, unobtainPokemon } from "./model.js";
 import { buildGrid } from "./view.js";
 
 class Pokedex
 {
-    constructor(region = "hoenn") {
-        this.region = region;
+    constructor(region = null) {
+        if (region != null) {
+            this.region = region;
+        } else {
+            let region = readFromLS("region");
+            if (region != null) {
+                this.region = region;
+            } else {
+                this.region = "kanto";
+            }
+        }
+        
     }
 
     buildDex = () => {
@@ -39,7 +50,9 @@ class Pokedex
             const pokemon = Array.from(document.querySelector('#pokedex-grid').children);
             pokemon.forEach(mon => {
                 mon.addEventListener('click', e => {
-                    // alert(e.currentTarget.dataset.url);
+                    const url = e.currentTarget.dataset.url.split('/v2/');
+                    // alert(url[1]);
+                    window.location.href = "pokemon.html?url=" + url[1];
                     return;
                 });
             });
@@ -63,6 +76,11 @@ class Pokedex
 
     unCheck = url => {
         unobtainPokemon(url);
+    };
+
+    changeRegion = region => {
+        this.region = region;
+        writeToLS("region", region);
     };
 
 }

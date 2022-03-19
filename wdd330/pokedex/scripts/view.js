@@ -4,7 +4,8 @@ Features I need:
  - Build a detail view 
 */
 
-import { getImage, isObtained } from "./model.js";
+import { readFromLS } from "./ls.js";
+import { getCurrentRegion, getFullImage, getImage, isObtained, regions } from "./model.js";
 
 
 /*
@@ -48,8 +49,35 @@ function buildGrid(pokemonData) {
     }
 }
 
-function showOnePokemon(url) {
+function buildRegionSelect(parent) {
+    const select = document.createElement('select');
+    select.id = "region";
+    for (let region of regions) {
+        const option = document.createElement('option');
+        option.value = region.value;
+        option.innerText = region.name;
 
+        if (getCurrentRegion() == region.value) {
+            option.selected = true;
+        }
+
+        select.appendChild(option);
+    }
+
+    parent.appendChild(select);
 }
 
-export { buildGrid, showOnePokemon };
+function showOnePokemon(url) {
+    const parent = document.querySelector('#poke-info');
+
+    const image = document.createElement('img');
+    // temp image
+    image.src = "images/pokeball.png";
+    getFullImage(url).then(data => {
+        image.src = data;
+    });
+
+    parent.appendChild(image);
+}
+
+export { buildGrid, showOnePokemon, buildRegionSelect };

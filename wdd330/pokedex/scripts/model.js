@@ -1,5 +1,35 @@
 import { readFromLS, writeToLS } from "./ls.js";
 
+// const regions = {
+//     {
+//         value: "kanto",
+//         name: "Kanto"
+//     } 
+// };
+
+const regions = [
+    {
+        value: "kanto",
+        name: "Kanto"
+    },
+    {
+        value: "original-johto",
+        name: "Johto"
+    },
+    {
+        value: "hoenn",
+        name: "Hoenn"
+    },
+    {
+        value: "original-sinnoh",
+        name: "Sinnoh"
+    },
+    {
+        value: "original-unova",
+        name: "Unova"
+    }
+];
+
 /*
 Fetch Pokemon data from the PokeAPI
 */
@@ -25,6 +55,7 @@ async function fetchSinglePokemon(url) {
     // Get the more specific data
     const pokemon = await fetch(data.varieties[0].pokemon.url);
     const pokemonData = await pokemon.json();
+    console.log(pokemonData);
     // console.log(pokemonData);
     if (pokemon.status == 200) {
         return pokemonData;
@@ -89,6 +120,30 @@ async function getImage(url) {
     }
 }
 
+async function getFullImage(url) {
+    let image = readFromLS(url);
+    if (image.fullImage != null) {
+        return image.fullImage;
+    } else {
+        const data = await fetchSinglePokemon(url);
+
+        console.log(data);
+        
+        const pokemon = readFromLS(url);
+        if (pokemon != null) {
+            pokemon.fullImage = data.sprites.other["official-artwork"].front_default;
+            writeToLS(url, pokemon);
+        } else {
+            const img = {
+                fullImage: data.sprites.other["official-artwork"].front_default
+            };
+            writeToLS(url, img);
+        }
+        console.log(pokemon.fullImage = data.sprites.other["official-artwork"].front_default);
+        return data.sprites.other["official-artwork"].front_default;
+    }
+}
+
 /*
 Check a pokemon as obtained
 */
@@ -133,4 +188,9 @@ function isObtained(url) {
     return false;
 }
 
-export { getPokeInfo, getImage, obtainPokemon, isObtained, unobtainPokemon };
+function getCurrentRegion() {
+    return readFromLS("region");
+}
+
+export { getPokeInfo, getImage, obtainPokemon, isObtained, unobtainPokemon,
+         regions, getCurrentRegion, getFullImage };

@@ -68,4 +68,10 @@ nav #navigation li select {
     display: grid;
     justify-items: center;
     align-items: center;
+    cursor: pointer;
+}
+
+#poke-info {
+    display: grid;
+    justify-items: center;
 }
