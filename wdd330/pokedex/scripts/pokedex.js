@@ -20,7 +20,7 @@ Features I need:
 */
 
 import { readFromLS, writeToLS } from "./ls.js";
-import { getPokeInfo, obtainPokemon, isObtained, unobtainPokemon } from "./model.js";
+import { getPokeInfo, obtainPokemon, isObtained, unobtainPokemon, toggleFavorite } from "./model.js";
 import { buildGrid } from "./view.js";
 
 class Pokedex
@@ -64,6 +64,15 @@ class Pokedex
                     } else {
                         this.check(e.currentTarget.dataset.url);
                     }
+                    e.stopPropagation();
+                });
+            });
+
+            const stars = document.querySelectorAll('.fa.fa-star');
+            stars.forEach(star => {
+                star.addEventListener('click', e => {
+                    star.classList.toggle('checked');
+                    toggleFavorite(e.currentTarget.dataset.url);
                     e.stopPropagation();
                 });
             });

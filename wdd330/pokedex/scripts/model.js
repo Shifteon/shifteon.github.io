@@ -27,6 +27,26 @@ const regions = [
     {
         value: "original-unova",
         name: "Unova"
+    },
+    {
+        value: "kalos-central",
+        name: "Kalos Central"
+    },
+    {
+        value: "kalos-costal",
+        name: "Kalos Costal"
+    },
+    {
+        value: "kalos-mountain",
+        name: "Kalos Mountain"
+    },
+    {
+        value: "original-alola",
+        name: "Alola"
+    },
+    {
+        value: "galar",
+        name: "Galar"
     }
 ];
 
@@ -174,6 +194,22 @@ function unobtainPokemon(url) {
 }
 
 /*
+Toggle if a pokemon is a favorite
+*/
+function toggleFavorite(url) {
+    const data = readFromLS(url);
+    if (data != null) {
+        data.favorite = !data.favorite;
+        writeToLS(url, data);
+    } else {
+        const pokemon = {
+            favorite: true
+        };
+        writeToLS(url, pokemon);
+    }
+}
+
+/*
 Check a pokemon as obtained
 */
 function isObtained(url) {
@@ -188,9 +224,22 @@ function isObtained(url) {
     return false;
 }
 
+function isFavorite(url) {
+    const data = readFromLS(url);
+    if (data != null) {
+        if (data.favorite) {
+            return data.favorite;
+        }
+        return false;
+    }
+
+    return false;
+}
+
 function getCurrentRegion() {
     return readFromLS("region");
 }
 
 export { getPokeInfo, getImage, obtainPokemon, isObtained, unobtainPokemon,
-         regions, getCurrentRegion, getFullImage };
+         regions, getCurrentRegion, getFullImage, fetchSinglePokemon, toggleFavorite,
+         isFavorite };
