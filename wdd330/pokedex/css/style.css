@@ -99,16 +99,20 @@ nav #navigation li select {
     transform: scale(1.5);
 }
 
-#pokedex-grid .grid-item span {
+#pokedex-grid .grid-item span, .fa-star {
     margin-left: .75em;
-    /* cursor: default; */
+    color: white;
+    background-color: #224870;
+    padding: .25em;
+    border-radius: 1em;
+    cursor: pointer;
 }
 
-#pokedex-grid .grid-item span:hover {
+#pokedex-grid .grid-item span:hover, .fa-star:hover {
     color: gold;
 }
 
-#pokedex-grid .grid-item span.checked {
+#pokedex-grid .grid-item span.checked, .fa.fa-star.checked {
     color: gold;
     transform: scale(1.2);
 }
@@ -150,18 +154,28 @@ nav #navigation li select {
     width: 100%;
 }
 
-#poke-info #poke-content h1 {
+#poke-info #poke-content #poke-header {
     grid-column: 1/-1;
     grid-row: 1/2;
     align-self: end;
     border-bottom: 3px solid #224870;
     margin-bottom: 0;
     width: 90%;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 #poke-info #poke-content .content-box {
     margin: 1em 0;
     width: 60%;
+}
+
+#poke-info #poke-content input {
+    transform: scale(3);
+    margin-left: 1.25em;
+    margin-top: 1em;
 }
 
 @keyframes rotation {

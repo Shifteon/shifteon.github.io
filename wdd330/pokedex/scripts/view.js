@@ -5,6 +5,7 @@ Features I need:
 */
 
 import { fetchSinglePokemon, getCurrentRegion, getFullImage, getImage, isFavorite, isObtained, regions } from "./model.js";
+import { Pokedex } from "./pokedex.js";
 
 function capitalize(string) {
     return string[0].toUpperCase() + string.slice(1);
@@ -47,6 +48,7 @@ function buildGrid(pokemonData) {
         content.innerText = `#${pokemon.entry_number} ${name}`;
 
         checkBox.type = "checkbox";
+        checkBox.classList.add('obtained-check');
         checkBox.setAttribute('data-url', url);
         if (isObtained(url)) {
             checkBox.checked = true;
@@ -106,9 +108,6 @@ function showOnePokemon(url) {
 
     parent.appendChild(image);
 
-    // const contentBox = document.createElement('div');
-    // contentBox.classList.add('content-box');
-
     fetchSinglePokemon(url).then(data => {
         const name = capitalize(data.name);
         const types = data.types;
@@ -117,7 +116,16 @@ function showOnePokemon(url) {
 
         const content = document.createElement('div');
         content.id = "poke-content";
-        content.innerHTML = `<h1>${name}</h1>`;
+
+        let span = `<span class="fa fa-star" data-url="${url}"></span>`;
+        if (isFavorite(url))
+            span = `<span class="fa fa-star checked" data-url="${url}"></span>`;
+        content.innerHTML = `
+            <div id="poke-header">
+                <h1>${name}</h1>
+                ${span}
+            </div>`;
+
 
         const section1 = document.createElement('div');
 
@@ -147,6 +155,15 @@ function showOnePokemon(url) {
         }
         section1.appendChild(abilityBox);
 
+        const checkBox = document.createElement('input');
+        checkBox.type = "checkbox";
+        checkBox.classList.add('obtained-check');
+        checkBox.setAttribute('data-url', url);
+        if (isObtained(url)) {
+            checkBox.checked = true;
+        }
+        section1.appendChild(checkBox);
+
         content.appendChild(section1);
 
         const section2 = document.createElement('div');
@@ -159,16 +176,24 @@ function showOnePokemon(url) {
         const statsBox = document.createElement('div');
         statsBox.classList.add('content-box');
         statsBox.classList.add('stats');
+        let total = 0;
         for (let stat of stats) {
             const text = document.createElement('p');
             text.textContent = capitalize(stat.stat.name) + ": " + stat.base_stat;
             statsBox.appendChild(text);
+            total += stat.base_stat;
         }
+        const text = document.createElement('p');
+        text.textContent = "Total: " + total;
+        statsBox.appendChild(text);
         section2.appendChild(statsBox);
 
         content.appendChild(section2);
 
         parent.appendChild(content);
+
+        // add the event listners for stars and checkboxes
+        Pokedex.addEventListeners();
     });
 }
 

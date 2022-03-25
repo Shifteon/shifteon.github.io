@@ -15,7 +15,7 @@ Features I need:
   kalos-central
   kalos-costal
   kalos-mountain
-  Original Alola
+  original-alola
   galar
 */
 
@@ -56,40 +56,39 @@ class Pokedex
                     return;
                 });
             });
-            const checkBoxes = document.querySelectorAll('.grid-item input');
-            checkBoxes.forEach(box => {
-                box.addEventListener('click', e => {
-                    if (isObtained(e.currentTarget.dataset.url)) {
-                        this.unCheck(e.currentTarget.dataset.url);
-                    } else {
-                        this.check(e.currentTarget.dataset.url);
-                    }
-                    e.stopPropagation();
-                });
-            });
-
-            const stars = document.querySelectorAll('.fa.fa-star');
-            stars.forEach(star => {
-                star.addEventListener('click', e => {
-                    star.classList.toggle('checked');
-                    toggleFavorite(e.currentTarget.dataset.url);
-                    e.stopPropagation();
-                });
-            });
+            Pokedex.addEventListeners();
         });
-    };
-
-    check = url => {
-        obtainPokemon(url);
-    };
-
-    unCheck = url => {
-        unobtainPokemon(url);
     };
 
     changeRegion = region => {
         this.region = region;
         writeToLS("region", region);
+    };
+
+    static addEventListeners() {
+        // console.log("hi");
+        const checkBoxes = document.querySelectorAll('.obtained-check');
+        // console.log(checkBoxes);
+        checkBoxes.forEach(box => {
+            box.addEventListener('click', e => {
+                if (isObtained(e.currentTarget.dataset.url)) {
+                    unobtainPokemon(e.currentTarget.dataset.url);
+                } else {
+                    obtainPokemon(e.currentTarget.dataset.url);
+                }
+                e.stopPropagation();
+            });
+        });
+
+        const stars = document.querySelectorAll('.fa.fa-star');
+        stars.forEach(star => {
+            star.addEventListener('click', e => {
+                star.classList.toggle('checked');
+                toggleFavorite(e.currentTarget.dataset.url);
+                // console.log("hi");
+                e.stopPropagation();
+            });
+        });
     };
 
 }
