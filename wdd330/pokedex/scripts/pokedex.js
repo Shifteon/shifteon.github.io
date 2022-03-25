@@ -39,8 +39,8 @@ class Pokedex
         
     }
 
-    buildDex = () => {
-        getPokeInfo(this.region)
+    buildDex = (filter="NONE") => {
+        getPokeInfo(this.region, filter)
         .then(data => {
             this.info = data;
             const pokemonData = this.info;

@@ -1,12 +1,6 @@
 import { readFromLS, writeToLS } from "./ls.js";
 
-// const regions = {
-//     {
-//         value: "kanto",
-//         name: "Kanto"
-//     } 
-// };
-
+// list of regions
 const regions = [
     {
         value: "national",

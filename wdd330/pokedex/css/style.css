@@ -129,6 +129,69 @@ nav #navigation li select {
     border-bottom: 4px solid #2A4494;
 }
 
+#filter-box {
+    display: none;
+}
+
+#filter-box.display {
+    display: block;
+
+    position: fixed;
+    bottom: 10%;
+    right: 5%;
+    padding: 1em;
+
+    background-color: #629460;
+    color: white;
+    border-radius: 1em;
+    font-size: 1.25em;
+}
+
+#filter-box ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#filter-box ul li:first-of-type {
+    margin: 0;
+    border-bottom: 1px solid white;
+}
+
+#filter-box ul li.filter-option {
+    margin: .5em 0;
+    cursor: pointer;
+}
+
+#filter-box ul li.filter-option:hover {
+    background-color: #96BE8C;
+}
+
+#filter {
+    position: fixed;
+    bottom: 3%;
+    right: 3%;
+
+    background-color: #2A4494;
+    color: white;
+    /* border: 1px solid #2A4494; */
+    box-shadow: 5px 3px 3px lightgray;
+    border: none;
+    cursor: pointer;
+    transition: 500ms;
+
+    font-size: 2em;
+    border-radius: 100%;
+    padding: .25em;
+    width: 52px;
+}
+
+#filter:hover {
+    background-color: white;
+    color: #2A4494;
+    /* border: 1px solid #2A4494; */
+}
+
 #poke-info {
     display: grid;
     justify-items: start;

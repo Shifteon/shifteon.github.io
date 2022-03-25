@@ -15,3 +15,18 @@ regions.addEventListener('change', e => {
     pokedex.changeRegion(e.target.value);
     pokedex.buildDex();
 });
+
+const filterBtn = document.querySelector('#filter');
+filterBtn.addEventListener('click', () => {
+    const filterBox = document.querySelector('#filter-box');
+    filterBox.classList.toggle('display');
+});
+
+const filters = document.querySelectorAll('.filter-option');
+
+filters.forEach(filter => {
+    filter.addEventListener('click', e => {
+        console.log(e.currentTarget.innerText);
+        pokedex.buildDex(e.currentTarget.innerText.toLowerCase());
+    });
+});
