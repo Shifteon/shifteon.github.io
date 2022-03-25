@@ -43,7 +43,7 @@ class Pokedex
         getPokeInfo(this.region)
         .then(data => {
             this.info = data;
-            const pokemonData = this.info.pokemon_entries;
+            const pokemonData = this.info;
             buildGrid(pokemonData);
 
             // add an event listener to each pokemon
@@ -51,11 +51,11 @@ class Pokedex
             pokemon.forEach(mon => {
                 mon.addEventListener('click', e => {
                     const url = e.currentTarget.dataset.url.split('/v2/');
-                    // alert(url[1]);
                     window.location.href = "pokemon.html?url=" + url[1];
                     return;
                 });
             });
+            // add event listners to checkboxes and stars
             Pokedex.addEventListeners();
         });
     };

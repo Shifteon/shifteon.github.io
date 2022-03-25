@@ -105,10 +105,31 @@ async function getSinglePokemon(url) {
 Read Pokemon info from local storage or 
 fetch it from the PokeAPI if it doesn't exist 
 */
-async function getPokeInfo(region="hoenn") {
-    let pokeInfo = readFromLS(region);
+async function getPokeInfo(region, filter="NONE") {
+    let pokeInfo = readFromLS(region).pokemon_entries;
     if (pokeInfo != null) {
-        return pokeInfo;
+        let info = [];
+        // filter which pokemon are actually returned
+        switch (filter) {
+            case "favorite":
+                for (let poke of pokeInfo) {
+                    if (isFavorite(poke.pokemon_species.url)) {
+                        info.push(poke);
+                    }
+                }
+                break;
+            case "obtained":
+                for (let poke of pokeInfo) {
+                    if (isObtained(poke.pokemon_species.url)) {
+                        info.push(poke);
+                    }
+                }
+                break;
+            default:
+                info = pokeInfo;
+                break;
+        }
+        return info;
     } else {
         const data = await fetchPokemon(region);
         writeToLS(region, data);
