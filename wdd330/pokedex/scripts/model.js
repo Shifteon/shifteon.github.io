@@ -9,6 +9,10 @@ import { readFromLS, writeToLS } from "./ls.js";
 
 const regions = [
     {
+        value: "national",
+        name: "National"
+    },
+    {
         value: "kanto",
         name: "Kanto"
     },
@@ -32,10 +36,10 @@ const regions = [
         value: "kalos-central",
         name: "Kalos Central"
     },
-    {
-        value: "kalos-costal",
-        name: "Kalos Costal"
-    },
+    // {
+    //     value: "kalos-costal",
+    //     name: "Kalos Costal"
+    // },
     {
         value: "kalos-mountain",
         name: "Kalos Mountain"
@@ -75,7 +79,7 @@ async function fetchSinglePokemon(url) {
     // Get the more specific data
     const pokemon = await fetch(data.varieties[0].pokemon.url);
     const pokemonData = await pokemon.json();
-    console.log(pokemonData);
+    // console.log(pokemonData);
     // console.log(pokemonData);
     if (pokemon.status == 200) {
         return pokemonData;
@@ -106,35 +110,37 @@ Read Pokemon info from local storage or
 fetch it from the PokeAPI if it doesn't exist 
 */
 async function getPokeInfo(region, filter="NONE") {
-    let pokeInfo = readFromLS(region).pokemon_entries;
-    if (pokeInfo != null) {
-        let info = [];
-        // filter which pokemon are actually returned
-        switch (filter) {
-            case "favorite":
-                for (let poke of pokeInfo) {
-                    if (isFavorite(poke.pokemon_species.url)) {
-                        info.push(poke);
-                    }
-                }
-                break;
-            case "obtained":
-                for (let poke of pokeInfo) {
-                    if (isObtained(poke.pokemon_species.url)) {
-                        info.push(poke);
-                    }
-                }
-                break;
-            default:
-                info = pokeInfo;
-                break;
-        }
-        return info;
-    } else {
+    let pokeInfo = readFromLS(region);
+    let info = [];
+    if (pokeInfo == null) {
         const data = await fetchPokemon(region);
         writeToLS(region, data);
-        return readFromLS(region);
+        pokeInfo = readFromLS(region);
     }
+
+    pokeInfo = pokeInfo.pokemon_entries;
+
+    // filter which pokemon are actually returned
+    switch (filter) {
+        case "favorite":
+            for (let poke of pokeInfo) {
+                if (isFavorite(poke.pokemon_species.url)) {
+                    info.push(poke);
+                }
+            }
+            break;
+        case "obtained":
+            for (let poke of pokeInfo) {
+                if (isObtained(poke.pokemon_species.url)) {
+                    info.push(poke);
+                }
+            }
+            break;
+        default:
+            info = pokeInfo;
+            break;
+    }
+    return info;
 }
 
 /*
