@@ -39,12 +39,12 @@ class Pokedex
         
     }
 
-    buildDex = (filter="NONE") => {
-        getPokeInfo(this.region, filter)
+    buildDex = (filter="NONE", pageNum=1) => {
+        getPokeInfo(this.region, filter, pageNum)
         .then(data => {
             this.info = data;
             const pokemonData = this.info;
-            buildGrid(pokemonData);
+            buildGrid(pokemonData, pageNum);
 
             // add an event listener to each pokemon
             const pokemon = Array.from(document.querySelector('#pokedex-grid').children);

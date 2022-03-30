@@ -103,7 +103,7 @@ async function getSinglePokemon(url) {
 Read Pokemon info from local storage or 
 fetch it from the PokeAPI if it doesn't exist 
 */
-async function getPokeInfo(region, filter="NONE") {
+async function getPokeInfo(region, filter="NONE", page=1) {
     let pokeInfo = readFromLS(region);
     let info = [];
     if (pokeInfo == null) {
@@ -114,6 +114,8 @@ async function getPokeInfo(region, filter="NONE") {
 
     pokeInfo = pokeInfo.pokemon_entries;
 
+    let length;
+
     // filter which pokemon are actually returned
     switch (filter) {
         case "favorite":
@@ -122,6 +124,7 @@ async function getPokeInfo(region, filter="NONE") {
                     info.push(poke);
                 }
             }
+            length = info.length;
             break;
         case "obtained":
             for (let poke of pokeInfo) {
@@ -129,12 +132,18 @@ async function getPokeInfo(region, filter="NONE") {
                     info.push(poke);
                 }
             }
+            length = info.length;
             break;
         default:
             info = pokeInfo;
+            length = info.length;
             break;
     }
-    return info;
+    const numPerPage = 20;
+    return {
+        "pokemon": info.splice((page - 1) * numPerPage, numPerPage),
+        "numPokemon": length
+    };
 }
 
 /*

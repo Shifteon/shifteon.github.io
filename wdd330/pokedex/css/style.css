@@ -192,6 +192,26 @@ nav #navigation li select {
     /* border: 1px solid #2A4494; */
 }
 
+#page-nav {
+    margin: 2em auto;
+    width: 50%;
+    text-align: center;
+    /* display: grid; */
+    /* grid-template-columns: repeat(8, 1fr); */
+}
+
+#page-nav a {
+    margin: 0 1em;
+    font-size: 1.25em;
+    font-weight: bold;
+    color: gray;
+    text-decoration: none;
+}
+
+#page-nav a:hover {
+    color: #224870;
+}
+
 #poke-info {
     display: grid;
     justify-items: start;

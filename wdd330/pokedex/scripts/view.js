@@ -14,11 +14,11 @@ function capitalize(string) {
 /*
 Build the pokedex grid
 */
-function buildGrid(pokemonData) {
+function buildGrid(pokemonData, pageNum = 1) {
     console.log(pokemonData);
     const grid = document.querySelector('#pokedex-grid');
     grid.innerHTML = '';
-    for (const pokemon of pokemonData) {
+    for (const pokemon of pokemonData.pokemon) {
         const url = pokemon.pokemon_species.url;
 
         let gridItem = document.createElement('div');
@@ -70,6 +70,58 @@ function buildGrid(pokemonData) {
         gridItem.appendChild(contentBox);
 
         grid.appendChild(gridItem);
+    }
+
+    // create page navigation
+    createPageNav(pageNum, pokemonData.numPokemon);
+}
+
+function createPageNav(pageNum, numPokemon) {
+    const navDiv = document.querySelector('#page-nav');
+    navDiv.innerHTML = "";
+    const numPages = Math.ceil(numPokemon / 20);
+    let splitPages = numPages;
+    if (numPages > 8) {
+        splitPages = 8;
+    }
+    let startPage = 1;
+    if (pageNum > 8) {
+        startPage = pageNum - (pageNum % 8);
+        splitPages = parseInt(startPage) + 8;
+        if (splitPages > numPages) {
+            splitPages = numPages
+        }
+    }
+
+    if (pageNum != 1) {
+        let beginningArrow = document.createElement('a');
+        beginningArrow.href = `index.html?page=${1}`;
+        beginningArrow.innerText = "<<";
+        navDiv.appendChild(beginningArrow);
+
+        let previousArrow = document.createElement('a');
+        previousArrow.href = `index.html?page=${pageNum - 1}`;
+        previousArrow.innerText = "<";
+        navDiv.appendChild(previousArrow);
+    } 
+
+    for (let i = startPage; i <= splitPages; i++) {
+        let pageLink = document.createElement('a');
+        pageLink.href = `index.html?page=${i}`;
+        pageLink.innerText = i;
+        navDiv.appendChild(pageLink);
+    }
+
+    if (pageNum != numPages) {
+        let nextArrow = document.createElement('a');
+        nextArrow.href = `index.html?page=${parseInt(pageNum) + 1}`;
+        nextArrow.innerText = ">";
+        navDiv.appendChild(nextArrow);
+
+        let endArrow = document.createElement('a');
+        endArrow.href = `index.html?page=${numPages}`;
+        endArrow.innerText = ">>";
+        navDiv.appendChild(endArrow);
     }
 }
 

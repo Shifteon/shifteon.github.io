@@ -5,7 +5,14 @@ import { buildRegionSelect } from "./view.js";
 
 const pokedex = new Pokedex();
 
-pokedex.buildDex();
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+
+if (urlParams.get("page")) {
+    pokedex.buildDex("NONE", urlParams.get("page"))
+} else {
+    pokedex.buildDex();
+}
 
 buildRegionSelect(document.querySelector('#region-select'));
 
