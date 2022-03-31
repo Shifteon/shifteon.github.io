@@ -358,5 +358,6 @@ nav #navigation li select {
     #poke-info #poke-content {
         grid-row: 2/3;
         grid-column: 1/2;
+        padding-left: 1em;
     }
 }
