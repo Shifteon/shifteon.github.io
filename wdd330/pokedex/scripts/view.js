@@ -76,24 +76,19 @@ function buildGrid(pokemonData, pageNum = 1) {
     createPageNav(pageNum, pokemonData.numPokemon);
 }
 
-function createSpinner(parent) {
-    const spinner = document.createElement('div');
-    spinner.classList.add('spinner');
-    parent.appendChild(spinner);
-}
-
 function createPageNav(pageNum, numPokemon) {
     const navDiv = document.querySelector('#page-nav');
     navDiv.innerHTML = "";
     const numPages = Math.ceil(numPokemon / 20);
+    const links = 5;
     let splitPages = numPages;
-    if (numPages > 8) {
-        splitPages = 8;
+    if (numPages > links) {
+        splitPages = links;
     }
     let startPage = 1;
-    if (pageNum > 8) {
-        startPage = pageNum - (pageNum % 8);
-        splitPages = parseInt(startPage) + 8;
+    if (pageNum > links) {
+        startPage = pageNum - (pageNum % links);
+        splitPages = parseInt(startPage) + links;
         if (splitPages > numPages) {
             splitPages = numPages
         }
