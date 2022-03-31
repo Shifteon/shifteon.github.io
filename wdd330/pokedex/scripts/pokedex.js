@@ -76,10 +76,17 @@ class Pokedex
                 } else {
                     obtainPokemon(e.currentTarget.dataset.url);
                 }
+                document.querySelector('.loader').classList.toggle('display');
                 // this is to have an animation to show it is saving
-                // setTimeout(() => {
+                setTimeout(() => {
+                    document.querySelector('.loader').classList.toggle('display');
+                    document.querySelector('.fa.fa-check').classList.toggle('display');
 
-                // }, 300)
+                    // for the check
+                    setTimeout(() => {
+                        document.querySelector('.fa.fa-check').classList.toggle('display');
+                    }, 1000);
+                }, 1000);
                 e.stopPropagation();
             });
         });
@@ -89,10 +96,17 @@ class Pokedex
             star.addEventListener('click', e => {
                 star.classList.toggle('checked');
                 toggleFavorite(e.currentTarget.dataset.url);
+                document.querySelector('.loader').classList.toggle('display');
                 // this is to have an animation to show it is saving
-                // setTimeout(() => {
+                setTimeout(() => {
+                    document.querySelector('.loader').classList.toggle('display');
+                    document.querySelector('.fa.fa-check').classList.toggle('display');
 
-                // }, 300)
+                    // for the check
+                    setTimeout(() => {
+                        document.querySelector('.fa.fa-check').classList.toggle('display');
+                    }, 1000);
+                }, 1000);
                 e.stopPropagation();
             });
         });

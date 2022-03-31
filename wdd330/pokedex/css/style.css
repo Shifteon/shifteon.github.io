@@ -99,7 +99,7 @@ nav #navigation li select {
     transform: scale(1.5);
 }
 
-#pokedex-grid .grid-item span, .fa-star {
+#pokedex-grid .grid-item span, .fa.fa-star {
     margin-left: .75em;
     color: white;
     background-color: #224870;
@@ -272,17 +272,55 @@ nav #navigation li select {
 
 .rotate {
     animation: rotation .5s infinite linear;
-  }
+}
+
+.loader {
+    border: 16px solid #f3f3f3; /* Light grey */
+    border-top: 16px solid #629460; /* Blue */
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    animation: spin .5s linear infinite;
+
+    position: fixed;
+    bottom: 5%;
+    right: 10%;
+
+    display: none;
+}
+
+.loader.display {
+    display: block;
+}
+
+.fa.fa-check {
+    display: none;
+}
+
+.fa.fa-check.display {
+    display: block;
+
+    position: fixed;
+    bottom: 5%;
+    right: 10%;
+    font-size: 50px;
+
+    color: #629460;
+
+    animation: fade 1s linear infinite;
+}
+  
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes fade {
+    0% { opacity: 100%; }
+    100% { opacity: 0%; }
+}
 
 @media only screen and (max-width: 450px) {
-    html {
-        /* min-width: 100%; */
-    }
-
-    body {
-        /* min-width: 100%; */
-    }
-
     nav {
         grid-template-columns: 40% 60%;
     }

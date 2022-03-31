@@ -76,6 +76,12 @@ function buildGrid(pokemonData, pageNum = 1) {
     createPageNav(pageNum, pokemonData.numPokemon);
 }
 
+function createSpinner(parent) {
+    const spinner = document.createElement('div');
+    spinner.classList.add('spinner');
+    parent.appendChild(spinner);
+}
+
 function createPageNav(pageNum, numPokemon) {
     const navDiv = document.querySelector('#page-nav');
     navDiv.innerHTML = "";
