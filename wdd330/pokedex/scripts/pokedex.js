@@ -76,6 +76,10 @@ class Pokedex
                 } else {
                     obtainPokemon(e.currentTarget.dataset.url);
                 }
+                // this is to have an animation to show it is saving
+                // setTimeout(() => {
+
+                // }, 300)
                 e.stopPropagation();
             });
         });
@@ -85,7 +89,10 @@ class Pokedex
             star.addEventListener('click', e => {
                 star.classList.toggle('checked');
                 toggleFavorite(e.currentTarget.dataset.url);
-                // console.log("hi");
+                // this is to have an animation to show it is saving
+                // setTimeout(() => {
+
+                // }, 300)
                 e.stopPropagation();
             });
         });

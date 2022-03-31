@@ -273,3 +273,52 @@ nav #navigation li select {
 .rotate {
     animation: rotation .5s infinite linear;
   }
+
+@media only screen and (max-width: 450px) {
+    html {
+        /* min-width: 100%; */
+    }
+
+    body {
+        /* min-width: 100%; */
+    }
+
+    nav {
+        grid-template-columns: 40% 60%;
+    }
+
+    nav #navigation {
+        width: 100%;
+    }
+
+    #pokedex-grid {
+        grid-template-columns: 1fr;
+        width: 100%;
+        margin: 0;
+    }
+
+    #page-nav {
+        margin: 1em 0;
+        width: 100%;
+    }
+
+    #page-nav a {
+        font-size: 1em;
+    }
+
+    #poke-info {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+
+    #poke-info img {
+        grid-column: 1/2;
+        width: 90%;
+        justify-self: center;
+    }
+
+    #poke-info #poke-content {
+        grid-row: 2/3;
+        grid-column: 1/2;
+    }
+}
