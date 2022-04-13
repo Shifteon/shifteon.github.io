@@ -73,6 +73,25 @@ const content = [{
         href: "https://github.com/Shifteon/hedgehog-garden-graphical",
         text: "Github"
     }]
+},{
+    img: "pokemon.png",
+    title: "Pokedex",
+    description: "A Pokedex application built using JavaScript.",
+    links: [{
+        href: "https://github.com/Shifteon/shifteon.github.io/tree/master/wdd330/pokedex",
+        text: "Github"
+    },{
+        href: "https://shifteon.github.io/wdd330/pokedex/index.html",
+        text: "View"
+    }]
+},{
+    img: "dance-card.png",
+    title: "Dance Card SDD",
+    description: "Software design document for a dance card application. Worked with a team of 17 people to create this.",
+    links: [{
+        href: "https://docs.google.com/document/d/1IlNKa682XbbSfQORzRms6kyAXc6B1PcI/edit?usp=sharing&ouid=114077024874967180302&rtpof=true&sd=true",
+        text: "View"
+    }]
 }];
 
 const skills = [{
